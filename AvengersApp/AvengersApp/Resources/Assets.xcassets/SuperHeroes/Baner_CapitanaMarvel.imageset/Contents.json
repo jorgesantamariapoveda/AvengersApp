@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Baner_CapitanaMarvel.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

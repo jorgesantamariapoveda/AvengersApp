@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Baner_Gamora.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
