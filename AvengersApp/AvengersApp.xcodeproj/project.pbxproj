@@ -13,6 +13,10 @@
 		CFE0EF18244C610B008A59FC /* AvengersApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF16244C610B008A59FC /* AvengersApp.xcdatamodeld */; };
 		CFE0EF1A244C610C008A59FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE0EF19244C610C008A59FC /* Assets.xcassets */; };
 		CFE0EF1D244C610C008A59FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE0EF1B244C610C008A59FC /* LaunchScreen.storyboard */; };
+		CFF12E032454AF460042963C /* AvengerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF12E022454AF460042963C /* AvengerType.swift */; };
+		CFF12E062454B0270042963C /* BattlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF12E042454B0270042963C /* BattlesViewController.swift */; };
+		CFF12E072454B0270042963C /* BattlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF12E052454B0270042963C /* BattlesViewController.xib */; };
+		CFF12E092454B28C0042963C /* AvengersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF12E082454B28C0042963C /* AvengersViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		CFE0EF19244C610C008A59FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE0EF1C244C610C008A59FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE0EF1E244C610C008A59FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF12E022454AF460042963C /* AvengerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerType.swift; sourceTree = "<group>"; };
+		CFF12E042454B0270042963C /* BattlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesViewController.swift; sourceTree = "<group>"; };
+		CFF12E052454B0270042963C /* BattlesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattlesViewController.xib; sourceTree = "<group>"; };
+		CFF12E082454B28C0042963C /* AvengersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvengersViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 		CFE0EF26244C6D26008A59FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CFF12E012454AF260042963C /* Enums */,
 				CFE0EF16244C610B008A59FC /* AvengersApp.xcdatamodeld */,
 			);
 			path = Data;
@@ -102,6 +111,8 @@
 		CFE0EF28244C6D60008A59FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFF12E082454B28C0042963C /* AvengersViewController.xib */,
+				CFF12E052454B0270042963C /* BattlesViewController.xib */,
 				CFE0EF1B244C610C008A59FC /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -111,8 +122,17 @@
 			isa = PBXGroup;
 			children = (
 				CFE0EF11244C610B008A59FC /* AvengersViewController.swift */,
+				CFF12E042454B0270042963C /* BattlesViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFF12E012454AF260042963C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CFF12E022454AF460042963C /* AvengerType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFE0EF1D244C610C008A59FC /* LaunchScreen.storyboard in Resources */,
+				CFF12E092454B28C0042963C /* AvengersViewController.xib in Resources */,
+				CFF12E072454B0270042963C /* BattlesViewController.xib in Resources */,
 				CFE0EF1A244C610C008A59FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +211,8 @@
 				CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */,
 				CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */,
 				CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */,
+				CFF12E062454B0270042963C /* BattlesViewController.swift in Sources */,
+				CFF12E032454AF460042963C /* AvengerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

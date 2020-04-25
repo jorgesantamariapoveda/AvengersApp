@@ -18,19 +18,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let heroVC = AvengersViewController()
-        heroVC.setAvengerType(type: .Hero)
-        heroVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "S_desactivado"), tag: 0)
+        let heroesVC = AvengersViewController()
+        heroesVC.setAvengerType(type: .Hero)
+        heroesVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "S_desactivado"), tag: 0)
 
-        let villainVC = AvengersViewController()
-        villainVC.setAvengerType(type: .Villain)
-        villainVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "V_desactivado"), tag: 1)
+        let battlesVC = BattlesViewController()
+        battlesVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "batalla_desactivado"), tag: 1)
 
-        let heroNavController = UINavigationController(rootViewController: heroVC)
-        let villainNavController = UINavigationController(rootViewController: villainVC)
+        let villainsVC = AvengersViewController()
+        villainsVC.setAvengerType(type: .Villain)
+        villainsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "V_desactivado"), tag: 2)
+
+        let heroesNavController = UINavigationController(rootViewController: heroesVC)
+        let battlesNavController = UINavigationController(rootViewController: battlesVC)
+        let villainsNavController = UINavigationController(rootViewController: villainsVC)
 
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [heroNavController, villainNavController]
+        tabBarController.viewControllers = [heroesNavController,
+                                            battlesNavController,
+                                            villainsNavController]
 
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = tabBarController

@@ -8,17 +8,15 @@
 
 import UIKit
 
-enum AvengerType {
-    case Hero
-    case Villain
-}
+final class AvengersViewController: UIViewController {
 
-class AvengersViewController: UIViewController {
+    // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Properties
     private var avengerType: AvengerType?
 
-    // MARK: Life cycle
+    // MARK: - Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,13 +28,13 @@ class AvengersViewController: UIViewController {
         guard let type = avengerType else { return }
         switch type {
             case .Hero:
+                self.title = "Superheros"
                 self.view.backgroundColor = .blue
-                self.title = "SuperHéroes"
                 self.tabBarItem.title = nil
 
             case .Villain:
+                self.title = "Villains"
                 self.view.backgroundColor = .red
-                self.title = "Villanos"
                 self.tabBarItem.title = nil
         }
     }
