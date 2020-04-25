@@ -18,8 +18,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        let heroVC = AvengersViewController()
+        heroVC.setAvengerType(type: .Hero)
+        heroVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "S_desactivado"), tag: 0)
+
+        let villainVC = AvengersViewController()
+        villainVC.setAvengerType(type: .Villain)
+        villainVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "V_desactivado"), tag: 1)
+
+        let heroNavController = UINavigationController(rootViewController: heroVC)
+        let villainNavController = UINavigationController(rootViewController: villainVC)
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [heroNavController, villainNavController]
+
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 

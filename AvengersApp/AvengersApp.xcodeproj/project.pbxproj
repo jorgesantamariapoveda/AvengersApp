@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF0D244C610B008A59FC /* AppDelegate.swift */; };
 		CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF0F244C610B008A59FC /* SceneDelegate.swift */; };
-		CFE0EF12244C610B008A59FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF11244C610B008A59FC /* ViewController.swift */; };
+		CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF11244C610B008A59FC /* AvengersViewController.swift */; };
 		CFE0EF18244C610B008A59FC /* AvengersApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF16244C610B008A59FC /* AvengersApp.xcdatamodeld */; };
 		CFE0EF1A244C610C008A59FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE0EF19244C610C008A59FC /* Assets.xcassets */; };
 		CFE0EF1D244C610C008A59FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE0EF1B244C610C008A59FC /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		CFE0EF0A244C610B008A59FC /* AvengersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvengersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE0EF0D244C610B008A59FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE0EF0F244C610B008A59FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CFE0EF11244C610B008A59FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFE0EF11244C610B008A59FC /* AvengersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengersViewController.swift; sourceTree = "<group>"; };
 		CFE0EF17244C610B008A59FC /* AvengersApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AvengersApp.xcdatamodel; sourceTree = "<group>"; };
 		CFE0EF19244C610C008A59FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE0EF1C244C610C008A59FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		CFE0EF29244C6D6F008A59FC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CFE0EF11244C610B008A59FC /* ViewController.swift */,
+				CFE0EF11244C610B008A59FC /* AvengersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFE0EF18244C610B008A59FC /* AvengersApp.xcdatamodeld in Sources */,
-				CFE0EF12244C610B008A59FC /* ViewController.swift in Sources */,
+				CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */,
 				CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */,
 				CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */,
 			);
