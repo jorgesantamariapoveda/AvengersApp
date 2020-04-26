@@ -17,7 +17,7 @@ final class BattlesViewController: UIViewController {
     // MARK: - Properties
     private let idCell = "BattleTableViewCell"
 
-    // MARK: - Lifecycle functions
+    // MARK: - Life cycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +39,15 @@ final class BattlesViewController: UIViewController {
         tableView.separatorStyle = .none
     }
 
+    // MARK: - IBActions
+
+    @IBAction func addBattleButtonTapped(_ sender: UIButton) {
+        let newBattleVC = NewBattleViewController()
+        let newBattleNavController = UINavigationController(rootViewController: newBattleVC)
+        newBattleNavController.modalTransitionStyle = .coverVertical
+        newBattleNavController.modalPresentationStyle = .overFullScreen
+        self.present(newBattleNavController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource

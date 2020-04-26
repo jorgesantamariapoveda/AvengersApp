@@ -17,7 +17,7 @@ final class AvengersViewController: UIViewController {
     private var avengerType: AvengerType?
     private let idCell = "AvengerTableViewCell"
 
-    // MARK: - Lifecycle functions
+    // MARK: - Life cycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -17,7 +17,7 @@ class BattleTableViewCell: UITableViewCell {
     @IBOutlet weak var imageVillain: UIImageView!
     @IBOutlet weak var colorViewVillain: UIView!
 
-    // MARK: - Lyfe cycle
+    // MARK: - Life cycle functions
     override func awakeFromNib() {
         super.awakeFromNib()
 

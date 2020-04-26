@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewBattleViewController" customModule="AvengersApp" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="MXv-qL-21i" id="jyE-ab-mnf"/>
+                <outlet property="confirmButton" destination="sCS-WL-Juf" id="zi9-qo-6WY"/>
+                <outlet property="heroButton" destination="OF1-7L-cOk" id="E93-T2-fbA"/>
+                <outlet property="heroImage" destination="pQt-ka-scO" id="d02-Ej-LVI"/>
+                <outlet property="titleBattle" destination="NUd-V4-GF0" id="gnd-Pa-566"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="villainButton" destination="uuj-0P-rOp" id="457-O5-F65"/>
+                <outlet property="villainImage" destination="3wS-g1-Cr0" id="Zbp-e6-INI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Batalla x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUd-V4-GF0">
+                    <rect key="frame" x="174.5" y="64" width="65" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simbolo_batalla" translatesAutoresizingMaskIntoConstraints="NO" id="9YP-MS-jiM">
+                    <rect key="frame" x="157" y="398" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="L3U-oO-783"/>
+                        <constraint firstAttribute="width" constant="100" id="oOC-4f-I8K"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_CapitanaMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="pQt-ka-scO">
+                    <rect key="frame" x="57" y="198" width="300" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="5qm-Xj-5te"/>
+                        <constraint firstAttribute="height" constant="200" id="fSx-MP-ISR"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_Yon-Rogg" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-g1-Cr0">
+                    <rect key="frame" x="57" y="498" width="300" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="GRu-3f-uGp"/>
+                        <constraint firstAttribute="height" constant="200" id="oSp-5J-LQz"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF1-7L-cOk">
+                    <rect key="frame" x="172" y="263" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="e1B-Nj-EKd"/>
+                        <constraint firstAttribute="height" constant="70" id="mBx-Cd-bWC"/>
+                    </constraints>
+                    <state key="normal" image="plus.circle" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" weight="thin"/>
+                    </state>
+                    <connections>
+                        <action selector="heroButtonTapped:" destination="-1" eventType="touchUpInside" id="N2f-J0-efG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuj-0P-rOp">
+                    <rect key="frame" x="172" y="563" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="BrB-tf-eUb"/>
+                        <constraint firstAttribute="width" constant="70" id="hlV-bu-GPr"/>
+                    </constraints>
+                    <state key="normal" image="plus.circle" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" weight="thin"/>
+                    </state>
+                    <connections>
+                        <action selector="villainButtonTapped:" destination="-1" eventType="touchUpInside" id="5DA-e8-DLD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCS-WL-Juf">
+                    <rect key="frame" x="172" y="772" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="JL1-MN-dva"/>
+                        <constraint firstAttribute="width" constant="70" id="d9X-86-O0A"/>
+                    </constraints>
+                    <state key="normal" image="checkmark.circle" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" weight="thin"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmButtonTapped:" destination="-1" eventType="touchUpInside" id="GrX-Mo-xv6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXv-qL-21i">
+                    <rect key="frame" x="354" y="54" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="033-SL-sql"/>
+                        <constraint firstAttribute="width" constant="50" id="oT0-G0-KO1"/>
+                    </constraints>
+                    <state key="normal" image="xmark.circle" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                    </state>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="RmK-Lj-I1a"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MXv-qL-21i" secondAttribute="trailing" constant="10" id="D5P-GY-rhY"/>
+                <constraint firstItem="OF1-7L-cOk" firstAttribute="centerX" secondItem="pQt-ka-scO" secondAttribute="centerX" id="DJZ-As-dRo"/>
+                <constraint firstItem="NUd-V4-GF0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FGD-fM-tKz"/>
+                <constraint firstItem="9YP-MS-jiM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FgN-7y-zza"/>
+                <constraint firstItem="uuj-0P-rOp" firstAttribute="centerY" secondItem="3wS-g1-Cr0" secondAttribute="centerY" id="M2L-31-hpY"/>
+                <constraint firstItem="MXv-qL-21i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Qm7-Bv-pyi"/>
+                <constraint firstItem="sCS-WL-Juf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X3m-Ec-XJl"/>
+                <constraint firstItem="NUd-V4-GF0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Xsj-sr-sdS"/>
+                <constraint firstItem="9YP-MS-jiM" firstAttribute="top" secondItem="pQt-ka-scO" secondAttribute="bottom" id="dLq-8x-vG6"/>
+                <constraint firstItem="9YP-MS-jiM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gXe-SC-JIw"/>
+                <constraint firstItem="pQt-ka-scO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gsx-px-1qL"/>
+                <constraint firstItem="3wS-g1-Cr0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h2A-rl-WXj"/>
+                <constraint firstItem="OF1-7L-cOk" firstAttribute="centerY" secondItem="pQt-ka-scO" secondAttribute="centerY" id="kql-wi-5Ra"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sCS-WL-Juf" secondAttribute="bottom" constant="20" id="rP5-Cf-XgI"/>
+                <constraint firstItem="uuj-0P-rOp" firstAttribute="centerX" secondItem="3wS-g1-Cr0" secondAttribute="centerX" id="rca-bZ-hVI"/>
+                <constraint firstItem="3wS-g1-Cr0" firstAttribute="top" secondItem="9YP-MS-jiM" secondAttribute="bottom" id="wfR-PZ-A8z"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-17.39130434782609" y="20.758928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Baner_CapitanaMarvel" width="670" height="414"/>
+        <image name="Baner_Yon-Rogg" width="670" height="414"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="simbolo_batalla" width="512" height="512"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
