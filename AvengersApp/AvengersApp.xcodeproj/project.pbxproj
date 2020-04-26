@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF47D0942455740E003414E5 /* AvengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */; };
+		CF47D0952455740E003414E5 /* AvengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47D0932455740E003414E5 /* AvengerTableViewCell.xib */; };
+		CF47D09924558BBE003414E5 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */; };
+		CF47D09A24558BBE003414E5 /* BattleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47D09824558BBE003414E5 /* BattleTableViewCell.xib */; };
 		CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF0D244C610B008A59FC /* AppDelegate.swift */; };
 		CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF0F244C610B008A59FC /* SceneDelegate.swift */; };
 		CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF11244C610B008A59FC /* AvengersViewController.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerTableViewCell.swift; sourceTree = "<group>"; };
+		CF47D0932455740E003414E5 /* AvengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvengerTableViewCell.xib; sourceTree = "<group>"; };
+		CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
+		CF47D09824558BBE003414E5 /* BattleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattleTableViewCell.xib; sourceTree = "<group>"; };
 		CFE0EF0A244C610B008A59FC /* AvengersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvengersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE0EF0D244C610B008A59FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE0EF0F244C610B008A59FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF47D09624558B15003414E5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CF47D0932455740E003414E5 /* AvengerTableViewCell.xib */,
+				CF47D09824558BBE003414E5 /* BattleTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CFE0EF01244C610B008A59FC = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +121,7 @@
 			children = (
 				CFE0EF29244C6D6F008A59FC /* Controllers */,
 				CFE0EF28244C6D60008A59FC /* Views */,
+				CF47D09624558B15003414E5 /* Cells */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -122,7 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				CFE0EF11244C610B008A59FC /* AvengersViewController.swift */,
+				CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */,
 				CFF12E042454B0270042963C /* BattlesViewController.swift */,
+				CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,8 +215,10 @@
 			files = (
 				CFE0EF1D244C610C008A59FC /* LaunchScreen.storyboard in Resources */,
 				CFF12E092454B28C0042963C /* AvengersViewController.xib in Resources */,
+				CF47D0952455740E003414E5 /* AvengerTableViewCell.xib in Resources */,
 				CFF12E072454B0270042963C /* BattlesViewController.xib in Resources */,
 				CFE0EF1A244C610C008A59FC /* Assets.xcassets in Resources */,
+				CF47D09A24558BBE003414E5 /* BattleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +232,10 @@
 				CFE0EF18244C610B008A59FC /* AvengersApp.xcdatamodeld in Sources */,
 				CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */,
 				CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */,
+				CF47D09924558BBE003414E5 /* BattleTableViewCell.swift in Sources */,
 				CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */,
 				CFF12E062454B0270042963C /* BattlesViewController.swift in Sources */,
+				CF47D0942455740E003414E5 /* AvengerTableViewCell.swift in Sources */,
 				CFF12E032454AF460042963C /* AvengerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

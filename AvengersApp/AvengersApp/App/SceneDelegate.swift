@@ -37,6 +37,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.viewControllers = [heroesNavController,
                                             battlesNavController,
                                             villainsNavController]
+        tabBarController.tabBar.tintColor = .blue
+        tabBarController.tabBar.barTintColor = .white
+        tabBarController.tabBar.backgroundColor = .black
 
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = tabBarController

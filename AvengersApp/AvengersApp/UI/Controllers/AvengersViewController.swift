@@ -15,6 +15,7 @@ final class AvengersViewController: UIViewController {
 
     // MARK: - Properties
     private var avengerType: AvengerType?
+    private let idCell = "AvengerTableViewCell"
 
     // MARK: - Lifecycle functions
     override func viewDidLoad() {
@@ -37,11 +38,45 @@ final class AvengersViewController: UIViewController {
                 self.view.backgroundColor = .red
                 self.tabBarItem.title = nil
         }
+        let nib = UINib(nibName: "AvengerTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: idCell)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
     }
 
     // MARK: - Public functions
     func setAvengerType(type: AvengerType) {
         avengerType = type
+    }
+
+}
+
+// MARK: - UITableViewDataSource
+extension AvengersViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idCell, for: indexPath) as? AvengerTableViewCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+
+}
+
+// MARK: - UITableViewDelegate
+extension AvengersViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 220
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
