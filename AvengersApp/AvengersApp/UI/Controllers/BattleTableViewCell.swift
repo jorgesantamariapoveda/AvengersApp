@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BattleTableViewCell: UITableViewCell {
+final class BattleTableViewCell: UITableViewCell {
 
     // MARK: - IBOutles
     @IBOutlet weak var titleBattle: UILabel!

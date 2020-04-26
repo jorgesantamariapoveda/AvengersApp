@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvengerDetailViewController" customModule="AvengersApp" customModuleProvider="target">
             <connections>
-                <outlet property="biografiaAvenger" destination="k5t-lp-Bhn" id="3GU-dF-1h0"/>
+                <outlet property="biographyAvenger" destination="k5t-lp-Bhn" id="3GU-dF-1h0"/>
                 <outlet property="imageAvenger" destination="I7H-xx-1Og" id="07Q-PO-Vh2"/>
                 <outlet property="powerAvenger" destination="bcq-IU-29b" id="46b-hD-YUk"/>
                 <outlet property="tableview" destination="x7D-VJ-QdZ" id="C4I-dB-Uoc"/>
@@ -21,78 +21,77 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_CapitanaMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="I7H-xx-1Og">
-                    <rect key="frame" x="20" y="54" width="335" height="250"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="250" id="rWR-JV-tQ7"/>
-                    </constraints>
-                </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4U0-jU-5mT" userLabel="Stack View Power">
-                    <rect key="frame" x="20" y="324" width="335" height="25"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-LQ-lvH">
+                    <rect key="frame" x="20" y="64" width="335" height="684"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5 estrellas" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-IU-29b">
-                            <rect key="frame" x="0.0" y="0.0" width="97" height="25"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_CapitanaMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="I7H-xx-1Og">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="250"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="250" id="rWR-JV-tQ7"/>
+                            </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="SuperPoder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2O-Li-y1s">
-                            <rect key="frame" x="107" y="0.0" width="193" height="25"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lz-fi-xHj">
-                            <rect key="frame" x="310" y="0.0" width="25" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="25" id="MWr-xv-N5i"/>
-                                <constraint firstAttribute="height" constant="25" id="V8c-78-rL3"/>
-                            </constraints>
-                            <state key="normal" image="pencil" catalog="system">
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
-                            </state>
-                            <connections>
-                                <action selector="pencilPowerTapped:" destination="-1" eventType="touchUpInside" id="pEX-Zj-xYA"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6I4-2N-Z4u">
-                    <rect key="frame" x="20" y="359" width="335" height="409"/>
-                    <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x7D-VJ-QdZ">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="248.66666666666666"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        </tableView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-8g-1eH">
-                            <rect key="frame" x="0.0" y="258.66666666666663" width="335" height="20.333333333333314"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k5t-lp-Bhn">
-                            <rect key="frame" x="0.0" y="289" width="335" height="120"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="120" id="str-sR-NVX"/>
-                            </constraints>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4U0-jU-5mT" userLabel="Stack View Power">
+                            <rect key="frame" x="0.0" y="265" width="335" height="25"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5 estrellas" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-IU-29b">
+                                    <rect key="frame" x="0.0" y="0.0" width="97" height="25"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="SuperPoder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2O-Li-y1s">
+                                    <rect key="frame" x="107" y="0.0" width="193" height="25"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lz-fi-xHj">
+                                    <rect key="frame" x="310" y="0.0" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="MWr-xv-N5i"/>
+                                        <constraint firstAttribute="height" constant="25" id="V8c-78-rL3"/>
+                                    </constraints>
+                                    <state key="normal" image="pencil" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="pencilPowerTapped:" destination="-1" eventType="touchUpInside" id="pEX-Zj-xYA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6I4-2N-Z4u">
+                            <rect key="frame" x="0.0" y="305" width="335" height="379"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x7D-VJ-QdZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="218.66666666666666"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </tableView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-8g-1eH">
+                                    <rect key="frame" x="0.0" y="228.66666666666663" width="335" height="20.333333333333343"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k5t-lp-Bhn">
+                                    <rect key="frame" x="0.0" y="259" width="335" height="120"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="str-sR-NVX"/>
+                                    </constraints>
+                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="6I4-2N-Z4u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3zG-bd-Ecq"/>
-                <constraint firstItem="I7H-xx-1Og" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="GLR-rS-zv9"/>
-                <constraint firstItem="4U0-jU-5mT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GzG-jg-uDO"/>
-                <constraint firstItem="I7H-xx-1Og" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="LS6-aM-hWr"/>
-                <constraint firstItem="4U0-jU-5mT" firstAttribute="top" secondItem="I7H-xx-1Og" secondAttribute="bottom" constant="20" id="S06-ub-Srq"/>
-                <constraint firstItem="I7H-xx-1Og" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UuC-B3-c64"/>
-                <constraint firstItem="6I4-2N-Z4u" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eFe-Nm-cD2"/>
-                <constraint firstItem="6I4-2N-Z4u" firstAttribute="top" secondItem="4U0-jU-5mT" secondAttribute="bottom" constant="10" id="fJE-fQ-7iA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6I4-2N-Z4u" secondAttribute="bottom" constant="10" id="kUD-lo-UHp"/>
-                <constraint firstItem="4U0-jU-5mT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="xT2-0K-zVy"/>
+                <constraint firstItem="lBN-LQ-lvH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AfT-fg-OAz"/>
+                <constraint firstItem="lBN-LQ-lvH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DGd-pm-9XL"/>
+                <constraint firstItem="lBN-LQ-lvH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cm7-l1-za7"/>
+                <constraint firstItem="lBN-LQ-lvH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="jY2-wa-0EW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="130.40000000000001" y="150"/>

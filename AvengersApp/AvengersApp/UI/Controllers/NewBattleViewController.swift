@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewBattleViewController: UIViewController {
+final class NewBattleViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var titleBattle: UILabel!

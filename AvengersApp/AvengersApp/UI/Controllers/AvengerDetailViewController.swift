@@ -8,14 +8,14 @@
 
 import UIKit
 
-class AvengerDetailViewController: UIViewController {
+final class AvengerDetailViewController: UIViewController {
 
     // MARK: - IBOutlets
 
     @IBOutlet weak var imageAvenger: UIImageView!
     @IBOutlet weak var powerAvenger: UIImageView!
     @IBOutlet weak var tableview: UITableView!
-    @IBOutlet weak var biografiaAvenger: UITextView!
+    @IBOutlet weak var biographyAvenger: UITextView!
 
     // MARK: - Life cycle functions
     override func viewDidLoad() {
@@ -27,12 +27,15 @@ class AvengerDetailViewController: UIViewController {
     // MARK: - Private functions
     func setupUI() {
         self.title = "Capitana Marvel"
+        imageAvenger.layer.cornerRadius = 8
 
         tableview.separatorStyle = .none
     }
 
     // MARK: - IBActions
     @IBAction func pencilPowerTapped(_ sender: UIButton) {
+        let avengerPowerVC = AvengerPowerViewController()
+        self.navigationController?.pushViewController(avengerPowerVC, animated: true)
     }
     
 }

@@ -15,6 +15,8 @@
 		CF47D09E245595E3003414E5 /* NewBattleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47D09C245595E3003414E5 /* NewBattleViewController.xib */; };
 		CF47D0A12455A73C003414E5 /* AvengerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D09F2455A73C003414E5 /* AvengerDetailViewController.swift */; };
 		CF47D0A22455A73C003414E5 /* AvengerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47D0A02455A73C003414E5 /* AvengerDetailViewController.xib */; };
+		CF47D0A52455CF46003414E5 /* AvengerPowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D0A32455CF46003414E5 /* AvengerPowerViewController.swift */; };
+		CF47D0A62455CF46003414E5 /* AvengerPowerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47D0A42455CF46003414E5 /* AvengerPowerViewController.xib */; };
 		CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF0D244C610B008A59FC /* AppDelegate.swift */; };
 		CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF0F244C610B008A59FC /* SceneDelegate.swift */; };
 		CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0EF11244C610B008A59FC /* AvengersViewController.swift */; };
@@ -36,6 +38,8 @@
 		CF47D09C245595E3003414E5 /* NewBattleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewBattleViewController.xib; sourceTree = "<group>"; };
 		CF47D09F2455A73C003414E5 /* AvengerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerDetailViewController.swift; sourceTree = "<group>"; };
 		CF47D0A02455A73C003414E5 /* AvengerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvengerDetailViewController.xib; sourceTree = "<group>"; };
+		CF47D0A32455CF46003414E5 /* AvengerPowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerPowerViewController.swift; sourceTree = "<group>"; };
+		CF47D0A42455CF46003414E5 /* AvengerPowerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvengerPowerViewController.xib; sourceTree = "<group>"; };
 		CFE0EF0A244C610B008A59FC /* AvengersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvengersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE0EF0D244C610B008A59FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE0EF0F244C610B008A59FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			children = (
 				CFF12E082454B28C0042963C /* AvengersViewController.xib */,
 				CF47D0A02455A73C003414E5 /* AvengerDetailViewController.xib */,
+				CF47D0A42455CF46003414E5 /* AvengerPowerViewController.xib */,
 				CFF12E052454B0270042963C /* BattlesViewController.xib */,
 				CF47D09C245595E3003414E5 /* NewBattleViewController.xib */,
 				CFE0EF1B244C610C008A59FC /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 				CFE0EF11244C610B008A59FC /* AvengersViewController.swift */,
 				CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */,
 				CF47D09F2455A73C003414E5 /* AvengerDetailViewController.swift */,
+				CF47D0A32455CF46003414E5 /* AvengerPowerViewController.swift */,
 				CFF12E042454B0270042963C /* BattlesViewController.swift */,
 				CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */,
 				CF47D09B245595E3003414E5 /* NewBattleViewController.swift */,
@@ -227,6 +233,7 @@
 			files = (
 				CF47D09E245595E3003414E5 /* NewBattleViewController.xib in Resources */,
 				CFE0EF1D244C610C008A59FC /* LaunchScreen.storyboard in Resources */,
+				CF47D0A62455CF46003414E5 /* AvengerPowerViewController.xib in Resources */,
 				CF47D0A22455A73C003414E5 /* AvengerDetailViewController.xib in Resources */,
 				CFF12E092454B28C0042963C /* AvengersViewController.xib in Resources */,
 				CF47D0952455740E003414E5 /* AvengerTableViewCell.xib in Resources */,
@@ -249,6 +256,7 @@
 				CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */,
 				CF47D09924558BBE003414E5 /* BattleTableViewCell.swift in Sources */,
 				CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */,
+				CF47D0A52455CF46003414E5 /* AvengerPowerViewController.swift in Sources */,
 				CFF12E062454B0270042963C /* BattlesViewController.swift in Sources */,
 				CF47D0942455740E003414E5 /* AvengerTableViewCell.swift in Sources */,
 				CFF12E032454AF460042963C /* AvengerType.swift in Sources */,
