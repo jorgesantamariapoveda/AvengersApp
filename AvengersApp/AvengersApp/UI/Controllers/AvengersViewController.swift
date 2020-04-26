@@ -76,6 +76,9 @@ extension AvengersViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailAvengerVC = AvengerDetailViewController()
+        self.navigationController?.pushViewController(detailAvengerVC, animated: true)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

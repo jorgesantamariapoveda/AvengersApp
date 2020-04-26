@@ -37,14 +37,14 @@
                         <constraint firstAttribute="width" constant="100" id="oOC-4f-I8K"/>
                     </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_CapitanaMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="pQt-ka-scO">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_CapitanaMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="pQt-ka-scO">
                     <rect key="frame" x="57" y="198" width="300" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="5qm-Xj-5te"/>
                         <constraint firstAttribute="height" constant="200" id="fSx-MP-ISR"/>
                     </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_Yon-Rogg" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-g1-Cr0">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_Yon-Rogg" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-g1-Cr0">
                     <rect key="frame" x="57" y="498" width="300" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="GRu-3f-uGp"/>
