@@ -14,50 +14,92 @@ final class AvengersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Properties
-    private var avengerType: AvengerType?
+    private let databaseProvider = DatabaseProvider()
+    private var avengerType: AvengerType = .Hero
+    private var heroes: [Hero] = []
+    private var villains: [Villain] = []
 
     // MARK: - Life cycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
-        probarBD()
-    }
-
-    private func probarBD() {
-//        let database = Database()
-//        database.saveHeroes()
-//        database.saveVillains()
-//        database.saveBattle()
-//        database.loadHeroes()
-//        database.loadVillains()
-//        database.loadBattles()
-    }
-
-    // MARK: - Private functions
-    private func setupUI() {
-        guard let type = avengerType else { return }
-        switch type {
-            case .Hero:
-                self.title = "Superheros"
-                self.view.backgroundColor = .blue
-                self.tabBarItem.title = nil
-
-            case .Villain:
-                self.title = "Villains"
-                self.view.backgroundColor = .red
-                self.tabBarItem.title = nil
-        }
-        let nib = UINib(nibName: "AvengerTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: AvengerTableViewCell.cellId)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
+        loadAvengers()
+        showData()
+        //probarBD()
     }
 
     // MARK: - Public functions
     func setAvengerType(type: AvengerType) {
         avengerType = type
+    }
+
+    // MARK: - Private functions
+    private func setupUI() {
+        switch avengerType {
+            case .Hero:
+                self.title = "Superheros"
+                self.view.backgroundColor = .blue
+
+            case .Villain:
+                self.title = "Villains"
+                self.view.backgroundColor = .red
+        }
+        self.tabBarItem.title = nil
+        configureTableView()
+    }
+
+    private func configureTableView() {
+        let nib = UINib(nibName: "AvengerTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: AvengerTableViewCell.cellId)
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        tableView.separatorStyle = .none
+    }
+
+    private func loadAvengers() {
+        switch avengerType {
+            case .Hero:
+                loadHeroes()
+
+            case .Villain:
+                loadVillains()
+        }
+    }
+
+    private func loadHeroes() {
+        let heroesBD = databaseProvider.loadHeroes()
+        if heroesBD.count > 0 {
+            heroes.append(contentsOf: heroesBD)
+        } else {
+            let heroesData = HeroesData()
+            let newHeroes = heroesData.createHeroesByDefault()
+            heroes.append(contentsOf: newHeroes)
+            if databaseProvider.persistAll() == false {
+                heroes = []
+                print("🤬 persistAll")
+            }
+        }
+    }
+
+    private func loadVillains() {
+
+    }
+
+    private func showData() {
+        tableView.reloadData()
+    }
+    
+    private func probarBD() {
+    //        let database = Database()
+    //        database.saveHeroes()
+    //        database.saveVillains()
+    //        database.saveBattle()
+    //        database.loadHeroes()
+    //        database.loadVillains()
+    //        database.loadBattles()
     }
 
 }
@@ -66,12 +108,27 @@ final class AvengersViewController: UIViewController {
 extension AvengersViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        switch avengerType {
+            case .Hero:
+                return heroes.count
+
+            case .Villain:
+                return villains.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AvengerTableViewCell.cellId, for: indexPath) as? AvengerTableViewCell else {
             return UITableViewCell()
+        }
+        switch avengerType {
+            case .Hero:
+                let hero = heroes[indexPath.row]
+                cell.configure(avengerType: avengerType, hero: hero, villain: nil)
+
+            case .Villain:
+                let villain = villains[indexPath.row]
+                cell.configure(avengerType: avengerType, hero: nil, villain: villain)
         }
         return cell
     }

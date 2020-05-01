@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF24D561245C37D400BF5674 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D560245C37D400BF5674 /* DatabaseProvider.swift */; };
+		CF24D563245C3C7000BF5674 /* HeroesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D562245C3C7000BF5674 /* HeroesData.swift */; };
+		CF24D565245C4A4800BF5674 /* AvengerPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D564245C4A4800BF5674 /* AvengerPower.swift */; };
 		CF47D0942455740E003414E5 /* AvengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */; };
 		CF47D0952455740E003414E5 /* AvengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47D0932455740E003414E5 /* AvengerTableViewCell.xib */; };
 		CF47D09924558BBE003414E5 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF24D560245C37D400BF5674 /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
+		CF24D562245C3C7000BF5674 /* HeroesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesData.swift; sourceTree = "<group>"; };
+		CF24D564245C4A4800BF5674 /* AvengerPower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerPower.swift; sourceTree = "<group>"; };
 		CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerTableViewCell.swift; sourceTree = "<group>"; };
 		CF47D0932455740E003414E5 /* AvengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvengerTableViewCell.xib; sourceTree = "<group>"; };
 		CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF24D55F245C300F00BF5674 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFE0EF16244C610B008A59FC /* AvengersApp.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CF47D09624558B15003414E5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,9 +138,11 @@
 		CFE0EF26244C6D26008A59FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CFF12E012454AF260042963C /* Enums */,
-				CFE0EF16244C610B008A59FC /* AvengersApp.xcdatamodeld */,
+				CF24D560245C37D400BF5674 /* DatabaseProvider.swift */,
 				CFD74B4A2459E4B100CA1514 /* Database.swift */,
+				CF24D562245C3C7000BF5674 /* HeroesData.swift */,
+				CF24D55F245C300F00BF5674 /* Model */,
+				CFF12E012454AF260042963C /* Enums */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -172,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				CFF12E022454AF460042963C /* AvengerType.swift */,
+				CF24D564245C4A4800BF5674 /* AvengerPower.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -254,9 +271,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF47D0A12455A73C003414E5 /* AvengerDetailViewController.swift in Sources */,
+				CF24D563245C3C7000BF5674 /* HeroesData.swift in Sources */,
+				CF24D561245C37D400BF5674 /* DatabaseProvider.swift in Sources */,
 				CFE0EF18244C610B008A59FC /* AvengersApp.xcdatamodeld in Sources */,
 				CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */,
 				CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */,
+				CF24D565245C4A4800BF5674 /* AvengerPower.swift in Sources */,
 				CF47D09924558BBE003414E5 /* BattleTableViewCell.swift in Sources */,
 				CFE0EF10244C610B008A59FC /* SceneDelegate.swift in Sources */,
 				CFD74B4B2459E4B100CA1514 /* Database.swift in Sources */,

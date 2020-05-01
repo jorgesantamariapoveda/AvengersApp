@@ -32,6 +32,7 @@ class Database {
     private let entityBattleHero = "hero"
     private let entityBattleVillain = "villain"
 
+    // MARK: - Private functions
     private var managedObjectContext: NSManagedObjectContext? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return nil
@@ -39,6 +40,80 @@ class Database {
 
         return appDelegate.persistentContainer.viewContext
     }
+
+    // MARK: - Public functions
+    func saveAll() -> Bool {
+        guard let context = managedObjectContext else { return false}
+
+        do {
+            try context.save()
+            return true
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            return false
+        }
+    }
+
+}
+
+// MARK: - Hero
+extension Database {
+
+    func createHero() -> NSManagedObject? {
+        guard let context = managedObjectContext,
+            let entity = NSEntityDescription.entity(
+                                                forEntityName: entityHero,
+                                                in: context) else {
+                return nil
+        }
+        return NSManagedObject(entity: entity, insertInto: context)
+    }
+
+    func loadHeroes() -> [NSManagedObject]? {
+        guard let context = managedObjectContext else { return nil }
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityHero)
+        guard let heroes = try? context.fetch(fetchRequest) else {
+            return nil
+        }
+        return heroes
+    }
+
+}
+
+// MARK: Villain
+extension Database {
+
+    func createVillain() -> NSManagedObject? {
+        guard let context = managedObjectContext,
+            let entity = NSEntityDescription.entity(
+                                                forEntityName: entityVillain,
+                                                in: context) else {
+                return nil
+        }
+        return NSManagedObject(entity: entity, insertInto: context)
+    }
+
+    func loadVillains() -> [NSManagedObject]? {
+        guard let context = managedObjectContext else { return nil }
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain)
+        guard let villains = try? context.fetch(fetchRequest) else {
+            return nil
+        }
+        return villains
+    }
+
+}
+
+// MARK: Battle
+extension Database {
+
+    
+}
+
+// MARK: Para borrar
+extension Database {
 
     func saveHeroes() {
         guard let context = managedObjectContext,
@@ -131,48 +206,5 @@ class Database {
 
         print("Battles: \(battles)")
     }
-
-    func loadHeroes() {
-        guard let context = managedObjectContext else { return }
-
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityHero)
-        guard let heroes = try? context.fetch(fetchRequest) else {
-            return
-        }
-//
-//        for battle in battles {
-//            guard let bat = battle as? Battle else { return }
-//            print("\(bat)")
-//            print("\(String(describing: bat.title))")
-//            print("\(String(describing: bat.winner))")
-//            print("\(String(describing: bat.hero))")
-//            print("\(String(describing: bat.hero?.name))")
-//            print("\(String(describing: bat.villain))")
-//        }
-
-        print("Heroes: \(heroes)")
-    }
-
-    func loadVillains() {
-        guard let context = managedObjectContext else { return }
-
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain)
-        guard let villains = try? context.fetch(fetchRequest) else {
-            return
-        }
-//
-//        for battle in battles {
-//            guard let bat = battle as? Battle else { return }
-//            print("\(bat)")
-//            print("\(String(describing: bat.title))")
-//            print("\(String(describing: bat.winner))")
-//            print("\(String(describing: bat.hero))")
-//            print("\(String(describing: bat.hero?.name))")
-//            print("\(String(describing: bat.villain))")
-//        }
-
-        print("Villains: \(villains)")
-    }
-
 
 }

@@ -45,6 +45,7 @@ final class BattlesViewController: UIViewController {
         newBattleNavController.modalPresentationStyle = .overFullScreen
         self.present(newBattleNavController, animated: true, completion: nil)
     }
+    
 }
 
 // MARK: - UITableViewDataSource

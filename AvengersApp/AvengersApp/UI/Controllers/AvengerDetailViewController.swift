@@ -11,7 +11,6 @@ import UIKit
 final class AvengerDetailViewController: UIViewController {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var imageAvenger: UIImageView!
     @IBOutlet weak var powerAvenger: UIImageView!
     @IBOutlet weak var tableview: UITableView!

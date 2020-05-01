@@ -11,7 +11,6 @@ import UIKit
 final class AvengerPowerViewController: UIViewController {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var avengerImage: UIImageView!
     @IBOutlet weak var powerAvengerButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -32,7 +31,6 @@ final class AvengerPowerViewController: UIViewController {
     }
 
     // MARK: - IBActions
-
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
     }
 
