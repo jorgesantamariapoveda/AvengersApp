@@ -61,7 +61,18 @@ final class NewBattleViewController: UIViewController {
     }
 
     private func loadHeroes() {
-        self.heroes.append(contentsOf: databaseProvider.loadHeroes())
+        let heroesBD = databaseProvider.loadHeroes()
+        if heroesBD.count > 0 {
+            heroes.append(contentsOf: heroesBD)
+        } else {
+            let heroesData = HeroesData()
+            let newHeroes = heroesData.createHeroesByDefault()
+            heroes.append(contentsOf: newHeroes)
+            if databaseProvider.persistAll() == false {
+                heroes = []
+                print("🤬 persistAll heroes")
+            }
+        }
     }
 
     private func loadHeroData() {
@@ -72,7 +83,18 @@ final class NewBattleViewController: UIViewController {
     }
 
     private func loadVillains() {
-        self.villains.append(contentsOf: databaseProvider.loadVillains())
+        let villainsBD = databaseProvider.loadVillains()
+        if villainsBD.count > 0 {
+            villains.append(contentsOf: villainsBD)
+        } else {
+            let villainsData = VillainsData()
+            let newVillains = villainsData.createVillainsByDefault()
+            villains.append(contentsOf: newVillains)
+            if databaseProvider.persistAll() == false {
+                villains = []
+                print("🤬 persistAll villains")
+            }
+        }
     }
 
     private func loadVillainData() {
