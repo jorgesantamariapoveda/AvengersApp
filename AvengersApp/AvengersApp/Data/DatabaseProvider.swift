@@ -79,4 +79,9 @@ extension DatabaseProvider {
         return data
     }
 
+    func deleteBatte(battle: Battle) -> Bool {
+        guard let title = battle.title else { return false }
+        return database?.deleteBattleBy(title: title) ?? false
+    }
+
 }

@@ -90,6 +90,22 @@ extension BattlesViewController: UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+            case .delete:
+                if indexPath.row < battles.count {
+                    let battle = battles[indexPath.row]
+                    if databaseProvider.deleteBatte(battle: battle) == true {
+                        loadBattles()
+                        showData()
+                    }
+                }
+
+            default:
+                break
+        }
+    }
+
 }
 
 // MARK: - UITableViewDelegate

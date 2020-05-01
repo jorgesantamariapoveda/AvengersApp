@@ -138,4 +138,26 @@ extension Database {
         return battles
     }
 
+    func deleteBattleBy(title: String) -> Bool {
+        guard let context = managedObjectContext else { return false }
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityBattle)
+        fetchRequest.predicate = NSPredicate(format: "title = %@", title)
+
+        do {
+            let datas = try context.fetch(fetchRequest)
+            if datas.count == 1,
+                let data = datas.first as? NSManagedObject {
+                    context.delete(data)
+            } else {
+                return false
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            return false
+        }
+
+        return saveAll()
+    }
+
 }
