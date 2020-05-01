@@ -117,7 +117,27 @@ extension Database {
 // MARK: Battle
 extension Database {
 
-    
+    // MARK: - Public functions
+    func createBatte() -> NSManagedObject? {
+        guard let context = managedObjectContext,
+            let entity = NSEntityDescription.entity(
+                                                forEntityName: entityBattle,
+                                                in: context) else {
+                return nil
+        }
+        return NSManagedObject(entity: entity, insertInto: context)
+    }
+
+    func loadBattles() -> [NSManagedObject]? {
+        guard let context = managedObjectContext else { return nil }
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityBattle)
+        guard let battles = try? context.fetch(fetchRequest) else {
+            return nil
+        }
+        return battles
+    }
+
 }
 
 // MARK: Para borrar

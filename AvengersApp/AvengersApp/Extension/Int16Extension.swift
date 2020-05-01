@@ -18,4 +18,8 @@ extension Int16 {
         return avengerPower.imagePower
     }
 
+    func randomPower() -> Int16 {
+        return Int16.random(in: 0...10)
+    }
+
 }

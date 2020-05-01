@@ -64,6 +64,10 @@ final class AvengerTableViewCell: UITableViewCell {
             }
             let imageButton = villain.power.imagePower()
             powerAvengerButton.setImage(imageButton, for: .normal)
+        } else {
+            nameAvenger.text = nil
+            imageAvenger.image = nil
+            powerAvengerButton.setImage(nil, for: .normal)
         }
     }
 

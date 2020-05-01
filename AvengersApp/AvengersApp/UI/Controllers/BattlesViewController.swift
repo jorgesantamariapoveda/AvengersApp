@@ -14,11 +14,17 @@ final class BattlesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addBattleButton: UIButton!
 
+    // MARK: - Properties
+    private let databaseProvider = DatabaseProvider()
+    private var battles: [Battle] = []
+
     // MARK: - Life cycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        loadBattles()
+        showData()
     }
 
     // MARK: - Private functions
@@ -29,20 +35,40 @@ final class BattlesViewController: UIViewController {
 
         addBattleButton.layer.cornerRadius = addBattleButton.bounds.size.height / 2.0
 
+        configureTableView()
+    }
+
+    private func configureTableView() {
         let nib = UINib(nibName: "BattleTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: BattleTableViewCell.cellId)
+
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.separatorStyle = .none
     }
 
-    // MARK: - IBActions
+    private func loadBattles() {
+        let battlesBD = databaseProvider.loadBattles()
+        if battlesBD.count > 0 {
+            battles = []
+            battles.append(contentsOf: battlesBD)
+        }
+    }
 
+    private func showData() {
+        tableView.reloadData()
+    }
+
+    // MARK: - IBActions
     @IBAction func addBattleButtonTapped(_ sender: UIButton) {
         let newBattleVC = NewBattleViewController()
+        newBattleVC.configure(delegate: self)
+
         let newBattleNavController = UINavigationController(rootViewController: newBattleVC)
         newBattleNavController.modalTransitionStyle = .coverVertical
         newBattleNavController.modalPresentationStyle = .overFullScreen
+
         self.present(newBattleNavController, animated: true, completion: nil)
     }
     
@@ -52,13 +78,15 @@ final class BattlesViewController: UIViewController {
 extension BattlesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return battles.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BattleTableViewCell.cellId, for: indexPath) as? BattleTableViewCell else {
             return UITableViewCell()
         }
+        let battle = battles[indexPath.row]
+        cell.configure(battle: battle)
         return cell
     }
 
@@ -73,6 +101,20 @@ extension BattlesViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+}
+
+// MARK: - NewBattleViewControllerDelegate
+extension BattlesViewController: NewBattleViewControllerDelegate {
+
+    func onNewBattle() {
+        if databaseProvider.persistAll() == true {
+            loadBattles()
+            showData()
+        } else {
+            print("🤬 persistAll heroes")
+        }
     }
 
 }

@@ -10,14 +10,14 @@ import Foundation
 
 struct VillainsData {
 
-    private let database = DatabaseProvider()
+    private let databaseProvider = DatabaseProvider()
 
     private let defaultBiography = " Ese pedazo de caballo blanco caballo negroorl al ataquerl sexuarl benemeritaar de la pradera. Benemeritaar tiene musho peligro jarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor ahorarr benemeritaar. Me cago en tus muelas apetecan no puedor caballo blanco caballo negroorl ese que llega. Ese pedazo de papaar papaar me cago en tus muelas a gramenawer fistro de la pradera mamaar al ataquerl está la cosa muy malar a gramenawer. Jarl está la cosa muy malar se calle ustée benemeritaar qué dise usteer ese pedazo de va usté muy cargadoo. Condemor sexuarl fistro tiene musho peligro a gramenawer te voy a borrar el cerito qué dise usteer ahorarr te va a hasé pupitaa diodenoo. Jarl por la gloria de mi madre pecador te va a hasé pupitaa no te digo trigo por no llamarte Rodrigor llevame al sircoo fistro. A gramenawer se calle ustée por la gloria de mi madre a peich va usté muy cargadoo pecador."
 
     func createVillainsByDefault() -> [Villain] {
         var villains: [Villain] = []
 
-        if let dormammu = database.createVillain() {
+        if let dormammu = databaseProvider.createVillain() {
             dormammu.name = "Dormammu"
             dormammu.power = AvengerPower.Star2.valueInt16
             dormammu.biography = "Biography Dormammu" + defaultBiography
@@ -25,7 +25,7 @@ struct VillainsData {
             villains.append(dormammu)
         }
 
-        if let ego = database.createVillain() {
+        if let ego = databaseProvider.createVillain() {
             ego.name = "Ego"
             ego.power = AvengerPower.Star3.valueInt16
             ego.biography = "Biography Ego" + defaultBiography
@@ -33,7 +33,7 @@ struct VillainsData {
             villains.append(ego)
         }
 
-        if let hela = database.createVillain() {
+        if let hela = databaseProvider.createVillain() {
             hela.name = "Hela"
             hela.power = AvengerPower.Star1.valueInt16
             hela.biography = "Biography Hela" + defaultBiography
@@ -41,7 +41,7 @@ struct VillainsData {
             villains.append(hela)
         }
 
-        if let vanko = database.createVillain() {
+        if let vanko = databaseProvider.createVillain() {
             vanko.name = "Ivan Vanko"
             vanko.power = AvengerPower.Star4.valueInt16
             vanko.biography = "Biography Ivan Vanko" + defaultBiography
@@ -49,7 +49,7 @@ struct VillainsData {
             villains.append(vanko)
         }
 
-        if let johann = database.createVillain() {
+        if let johann = databaseProvider.createVillain() {
             johann.name = "JohannSchmidt"
             johann.power = AvengerPower.Star5.valueInt16
             johann.biography = "Biography JohannSchmidt" + defaultBiography
@@ -57,7 +57,7 @@ struct VillainsData {
             villains.append(johann)
         }
 
-        if let malekith = database.createVillain() {
+        if let malekith = databaseProvider.createVillain() {
             malekith.name = "Malekith"
             malekith.power = AvengerPower.Star2.valueInt16
             malekith.biography = "Biography Malekith" + defaultBiography
@@ -65,7 +65,7 @@ struct VillainsData {
             villains.append(malekith)
         }
 
-        if let ronan = database.createVillain() {
+        if let ronan = databaseProvider.createVillain() {
             ronan.name = "Ronan"
             ronan.power = AvengerPower.Star3.valueInt16
             ronan.biography = "Biography Ronan" + defaultBiography
@@ -73,7 +73,7 @@ struct VillainsData {
             villains.append(ronan)
         }
 
-        if let thanos = database.createVillain() {
+        if let thanos = databaseProvider.createVillain() {
             thanos.name = "Thanos"
             thanos.power = AvengerPower.Star1.valueInt16
             thanos.biography = "Biography Thanos" + defaultBiography
@@ -81,7 +81,7 @@ struct VillainsData {
             villains.append(thanos)
         }
 
-        if let ultron = database.createVillain() {
+        if let ultron = databaseProvider.createVillain() {
             ultron.name = "Ultron"
             ultron.power = AvengerPower.Star4.valueInt16
             ultron.biography = "Biography Ultron" + defaultBiography
@@ -89,7 +89,7 @@ struct VillainsData {
             villains.append(ultron)
         }
 
-        if let yon = database.createVillain() {
+        if let yon = databaseProvider.createVillain() {
             yon.name = "Yon-Rogg"
             yon.power = AvengerPower.Star3.valueInt16
             yon.biography = "Biography Yon-Rogg" + defaultBiography

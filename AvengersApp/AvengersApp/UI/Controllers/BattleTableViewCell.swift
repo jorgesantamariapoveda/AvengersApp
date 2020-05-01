@@ -20,6 +20,8 @@ final class BattleTableViewCell: UITableViewCell {
     // MARK: - Properties
     static let cellId: String = String(describing: BattleTableViewCell.self)
 
+    private var battle: Battle?
+
     // MARK: - Life cycle functions
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +30,16 @@ final class BattleTableViewCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
-        print("Reutilizar celda battle")
+        battle = nil
+
+        loadBattleData()
+    }
+
+    // MARK: - Public functions
+    func configure(battle: Battle) {
+        self.battle = battle
+
+        loadBattleData()
     }
 
     // MARK: - Private functions
@@ -38,6 +49,25 @@ final class BattleTableViewCell: UITableViewCell {
         
         imageVillain.layer.cornerRadius = 8
         colorViewVillain.layer.cornerRadius = 2
+    }
+
+    private func loadBattleData() {
+        if let battle = self.battle,
+            let hero = battle.hero,
+            let villain = battle.villain {
+            titleBattle.text = battle.title
+            imageHero.image = UIImage(named: hero.image ?? "")
+            imageVillain.image = UIImage(named: villain.image ?? "")
+            let winnerType = WinnerType.init(rawValue: Int(battle.winner))
+            colorViewHero.backgroundColor = winnerType?.colorHero
+            colorViewVillain.backgroundColor = winnerType?.colorVillain
+        } else {
+            titleBattle.text = nil
+            imageHero.image = nil
+            imageVillain.image = nil
+            colorViewHero.backgroundColor = .black
+            colorViewVillain.backgroundColor = .black
+        }
     }
 
 }

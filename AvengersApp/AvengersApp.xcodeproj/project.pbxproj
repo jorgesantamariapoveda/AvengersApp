@@ -12,6 +12,8 @@
 		CF24D565245C4A4800BF5674 /* AvengerPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D564245C4A4800BF5674 /* AvengerPower.swift */; };
 		CF24D567245C5E5F00BF5674 /* VillainsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D566245C5E5F00BF5674 /* VillainsData.swift */; };
 		CF24D56B245C7B7B00BF5674 /* Int16Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D56A245C7B7B00BF5674 /* Int16Extension.swift */; };
+		CF24D56D245C982200BF5674 /* WinnerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D56C245C982200BF5674 /* WinnerType.swift */; };
+		CF24D56F245CA1BB00BF5674 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF24D56E245CA1BB00BF5674 /* CollectionExtension.swift */; };
 		CF47D0942455740E003414E5 /* AvengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */; };
 		CF47D0952455740E003414E5 /* AvengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47D0932455740E003414E5 /* AvengerTableViewCell.xib */; };
 		CF47D09924558BBE003414E5 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */; };
@@ -41,6 +43,8 @@
 		CF24D564245C4A4800BF5674 /* AvengerPower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerPower.swift; sourceTree = "<group>"; };
 		CF24D566245C5E5F00BF5674 /* VillainsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillainsData.swift; sourceTree = "<group>"; };
 		CF24D56A245C7B7B00BF5674 /* Int16Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int16Extension.swift; sourceTree = "<group>"; };
+		CF24D56C245C982200BF5674 /* WinnerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerType.swift; sourceTree = "<group>"; };
+		CF24D56E245CA1BB00BF5674 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		CF47D0922455740E003414E5 /* AvengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengerTableViewCell.swift; sourceTree = "<group>"; };
 		CF47D0932455740E003414E5 /* AvengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvengerTableViewCell.xib; sourceTree = "<group>"; };
 		CF47D09724558BBE003414E5 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				CF24D56A245C7B7B00BF5674 /* Int16Extension.swift */,
+				CF24D56E245CA1BB00BF5674 /* CollectionExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			children = (
 				CFF12E022454AF460042963C /* AvengerType.swift */,
 				CF24D564245C4A4800BF5674 /* AvengerPower.swift */,
+				CF24D56C245C982200BF5674 /* WinnerType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -292,9 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF24D56D245C982200BF5674 /* WinnerType.swift in Sources */,
 				CF47D0A12455A73C003414E5 /* AvengerDetailViewController.swift in Sources */,
 				CF24D563245C3C7000BF5674 /* HeroesData.swift in Sources */,
 				CF24D561245C37D400BF5674 /* DatabaseProvider.swift in Sources */,
+				CF24D56F245CA1BB00BF5674 /* CollectionExtension.swift in Sources */,
 				CFE0EF18244C610B008A59FC /* AvengersApp.xcdatamodeld in Sources */,
 				CFE0EF12244C610B008A59FC /* AvengersViewController.swift in Sources */,
 				CFE0EF0E244C610B008A59FC /* AppDelegate.swift in Sources */,

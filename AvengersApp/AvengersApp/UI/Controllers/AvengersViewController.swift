@@ -26,7 +26,6 @@ final class AvengersViewController: UIViewController {
         setupUI()
         loadAvengers()
         showData()
-        //probarBD()
     }
 
     // MARK: - Public functions
@@ -101,16 +100,6 @@ final class AvengersViewController: UIViewController {
 
     private func showData() {
         tableView.reloadData()
-    }
-    
-    private func probarBD() {
-    //        let database = Database()
-    //        database.saveHeroes()
-    //        database.saveVillains()
-    //        database.saveBattle()
-    //        database.loadHeroes()
-    //        database.loadVillains()
-    //        database.loadBattles()
     }
 
 }

@@ -94,10 +94,12 @@ extension AvengerDetailViewController: AvengerPowerViewControllerDelegate {
             villain.power = Int16(newPower)
             powerAvenger.image = villain.power.imagePower()
         }
-        if databaseProvider.persistAll() == false {
+
+        if databaseProvider.persistAll() == true {
+            delegate?.onChangePower()
+        } else {
             print("🤬 persistAll power")
         }
-        delegate?.onChangePower()
     }
     
 }

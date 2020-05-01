@@ -34,6 +34,10 @@ extension DatabaseProvider {
 // MARK: - Hero database
 extension DatabaseProvider {
 
+    func createHero() -> Hero? {
+        return database?.createHero() as? Hero
+    }
+
     func loadHeroes() -> [Hero] {
         guard let data = database?.loadHeroes() as? [Hero] else {
             return []
@@ -41,15 +45,14 @@ extension DatabaseProvider {
 
         return data
     }
-
-    func createHero() -> Hero? {
-        return database?.createHero() as? Hero
-    }
-
 }
 
 // MARK: - Villain database
 extension DatabaseProvider {
+
+    func createVillain() -> Villain? {
+        return database?.createVillain() as? Villain
+    }
 
     func loadVillains() -> [Villain] {
         guard let data = database?.loadVillains()as? [Villain] else {
@@ -59,8 +62,21 @@ extension DatabaseProvider {
         return data
     }
 
-    func createVillain() -> Villain? {
-        return database?.createVillain() as? Villain
+}
+
+// MARK: - Battle database
+extension DatabaseProvider {
+
+    func createBattle() -> Battle? {
+        return database?.createBatte() as? Battle
+    }
+
+    func loadBattles() -> [Battle] {
+        guard let data = database?.loadBattles() as? [Battle] else {
+            return []
+        }
+
+        return data
     }
 
 }

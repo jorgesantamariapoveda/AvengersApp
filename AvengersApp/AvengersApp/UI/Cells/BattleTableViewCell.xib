@@ -23,10 +23,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gar-3Q-xa4">
-                        <rect key="frame" x="13" y="40.5" width="294" height="85"/>
+                        <rect key="frame" x="13" y="40.5" width="294" height="87"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2PY-x4-jpL">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="85"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2PY-x4-jpL">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="87"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_CapitanaMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-ku-grp">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
@@ -36,7 +36,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldP-Ee-2Xp">
-                                        <rect key="frame" x="15" y="80" width="90" height="5"/>
+                                        <rect key="frame" x="15" y="82" width="90" height="5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="7xR-oe-qFp"/>
@@ -46,13 +46,13 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simbolo_batalla" translatesAutoresizingMaskIntoConstraints="NO" id="GAt-V0-OJM">
-                                <rect key="frame" x="122" y="0.0" width="50" height="85"/>
+                                <rect key="frame" x="122" y="0.0" width="50" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="uNX-rn-aOv"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0gI-dU-0Qn">
-                                <rect key="frame" x="174" y="0.0" width="120" height="85"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0gI-dU-0Qn">
+                                <rect key="frame" x="174" y="0.0" width="120" height="87"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baner_Gamora" translatesAutoresizingMaskIntoConstraints="NO" id="27O-D2-tyF">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
@@ -62,7 +62,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-7Q-f2a">
-                                        <rect key="frame" x="15" y="80" width="90" height="5"/>
+                                        <rect key="frame" x="15" y="82" width="90" height="5"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="PFS-NY-fQV"/>
