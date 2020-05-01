@@ -25,6 +25,7 @@ final class AvengerDetailViewController: UIViewController {
     private var hero: Hero?
     private var villain: Villain?
     private weak var delegate: AvengerDetailViewControllerDelegate?
+    private let cellId: String = String(describing: UITableViewCell.self)
 
     // MARK: - Life cycle functions
     override func viewDidLoad() {
@@ -49,7 +50,12 @@ final class AvengerDetailViewController: UIViewController {
     }
 
     private func configureTableView() {
-        //tableview.separatorStyle = .none
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        tableView.separatorStyle = .none
     }
 
     private func loadAvengerData() {
@@ -79,6 +85,48 @@ final class AvengerDetailViewController: UIViewController {
             avengerPowerVC.configure(villain: villain, delegate: self)
         }
         self.navigationController?.pushViewController(avengerPowerVC, animated: true)
+    }
+
+}
+
+// MARK:  - UITableViewDataSource
+extension AvengerDetailViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let hero = self.hero {
+            return hero.battles?.count ?? 0
+        } else if let villain = self.villain {
+            return villain.battles?.count ?? 0
+        } else {
+            return 0
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+
+        if let hero = self.hero {
+            guard let battle = hero.battles?[indexPath.row] as? Battle else { return cell }
+            cell.textLabel?.text = battle.title
+            let winnerType = WinnerType.init(rawValue: Int(battle.winner))
+            cell.backgroundColor = winnerType?.colorHero
+        } else if let villain = self.villain {
+            guard let battle = villain.battles?[indexPath.row] as? Battle else { return cell }
+            cell.textLabel?.text = battle.title
+            let winnerType = WinnerType.init(rawValue: Int(battle.winner))
+            cell.backgroundColor = winnerType?.colorVillain
+        }
+
+        return cell
+    }
+
+}
+
+// MARK: - UITableViewDelegate
+extension AvengerDetailViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 
 }
