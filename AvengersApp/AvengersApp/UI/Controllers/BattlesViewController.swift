@@ -14,9 +14,6 @@ final class BattlesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addBattleButton: UIButton!
 
-    // MARK: - Properties
-    private let idCell = "BattleTableViewCell"
-
     // MARK: - Life cycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +30,7 @@ final class BattlesViewController: UIViewController {
         addBattleButton.layer.cornerRadius = addBattleButton.bounds.size.height / 2.0
 
         let nib = UINib(nibName: "BattleTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: idCell)
+        tableView.register(nib, forCellReuseIdentifier: BattleTableViewCell.cellId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -58,7 +55,7 @@ extension BattlesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idCell, for: indexPath) as? BattleTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BattleTableViewCell.cellId, for: indexPath) as? BattleTableViewCell else {
             return UITableViewCell()
         }
         return cell

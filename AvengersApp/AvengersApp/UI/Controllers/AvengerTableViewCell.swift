@@ -15,6 +15,9 @@ final class AvengerTableViewCell: UITableViewCell {
     @IBOutlet weak var nameAvenger: UILabel!
     @IBOutlet weak var powerAvengerButton: UIButton!
     
+    // MARK: - Properties
+    static let cellId: String = String(describing: AvengerTableViewCell.self)
+
     // MARK: - Life cycle functions
     override func awakeFromNib() {
         super.awakeFromNib()

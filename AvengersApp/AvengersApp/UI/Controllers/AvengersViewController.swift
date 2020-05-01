@@ -15,13 +15,23 @@ final class AvengersViewController: UIViewController {
 
     // MARK: - Properties
     private var avengerType: AvengerType?
-    private let idCell = "AvengerTableViewCell"
 
     // MARK: - Life cycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        probarBD()
+    }
+
+    private func probarBD() {
+//        let database = Database()
+//        database.saveHeroes()
+//        database.saveVillains()
+//        database.saveBattle()
+//        database.loadHeroes()
+//        database.loadVillains()
+//        database.loadBattles()
     }
 
     // MARK: - Private functions
@@ -39,7 +49,7 @@ final class AvengersViewController: UIViewController {
                 self.tabBarItem.title = nil
         }
         let nib = UINib(nibName: "AvengerTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: idCell)
+        tableView.register(nib, forCellReuseIdentifier: AvengerTableViewCell.cellId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -60,7 +70,7 @@ extension AvengersViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idCell, for: indexPath) as? AvengerTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AvengerTableViewCell.cellId, for: indexPath) as? AvengerTableViewCell else {
             return UITableViewCell()
         }
         return cell

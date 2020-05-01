@@ -17,6 +17,9 @@ final class BattleTableViewCell: UITableViewCell {
     @IBOutlet weak var imageVillain: UIImageView!
     @IBOutlet weak var colorViewVillain: UIView!
 
+    // MARK: - Properties
+    static let cellId: String = String(describing: BattleTableViewCell.self)
+
     // MARK: - Life cycle functions
     override func awakeFromNib() {
         super.awakeFromNib()
