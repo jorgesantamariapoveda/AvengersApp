@@ -85,7 +85,18 @@ final class AvengersViewController: UIViewController {
     }
 
     private func loadVillains() {
-
+        let villainsBD = databaseProvider.loadVillains()
+        if villainsBD.count > 0 {
+            villains.append(contentsOf: villainsBD)
+        } else {
+            let villainsData = VillainsData()
+            let newVillains = villainsData.createVillainsByDefault()
+            villains.append(contentsOf: newVillains)
+            if databaseProvider.persistAll() == false {
+                villains = []
+                print("🤬 persistAll")
+            }
+        }
     }
 
     private func showData() {

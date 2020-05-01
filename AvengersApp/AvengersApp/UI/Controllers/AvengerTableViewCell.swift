@@ -64,6 +64,13 @@ final class AvengerTableViewCell: UITableViewCell {
 
             case .Villain:
                 nameAvenger.text = villain?.name
+                if let villain = villain,
+                    let image = UIImage(named: villain.image ?? "") {
+                    imageAvenger.image = image
+                }
+                guard let power = villain?.power,
+                        let imageButton = imageButtonBy(power: power) else { return }
+                powerAvengerButton.setImage(imageButton, for: .normal)
         }
     }
 

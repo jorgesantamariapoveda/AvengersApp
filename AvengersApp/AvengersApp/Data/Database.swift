@@ -73,6 +73,7 @@ extension Database {
         guard let context = managedObjectContext else { return nil }
 
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityHero)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: entityHeroName, ascending: true)]
         guard let heroes = try? context.fetch(fetchRequest) else {
             return nil
         }
@@ -98,6 +99,7 @@ extension Database {
         guard let context = managedObjectContext else { return nil }
 
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: entityVillainName, ascending: true)]
         guard let villains = try? context.fetch(fetchRequest) else {
             return nil
         }
