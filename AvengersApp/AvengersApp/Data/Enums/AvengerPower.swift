@@ -16,6 +16,10 @@ enum AvengerPower: Int {
     case Star4
     case Star5
 
+    var valueInt16: Int16 {
+        return Int16(self.rawValue)
+    }
+
     var valueString: String {
         switch self {
             case .Star0:
@@ -38,60 +42,4 @@ enum AvengerPower: Int {
         }
     }
 
-    var valueInt16: Int16 {
-
-        return Int16(self.rawValue)
-//        switch self {
-//            case .Star0:
-//                return Int16(0)
-//
-//            case .Star1:
-//                return Int16(1)
-//
-//            case .Star2:
-//                return Int16(2)
-//
-//            case .Star3:
-//                return Int16(3)
-//
-//            case .Star4:
-//                return Int16(4)
-//
-//            case .Star5:
-//                return Int16(5)
-//        }
-    }
-
 }
-
-//enum AvengerPower: String {
-//    case Star0 = "0 estrellas"
-//    case Star1 = "1 estrella"
-//    case Star2 = "2 estrellas"
-//    case Star3 = "3 estrellas"
-//    case Star4 = "4 estrellas"
-//    case Star5 = "5 estrellas"
-//
-//    var valueInt16: Int16 {
-//        switch self {
-//            case .Star0:
-//                return Int16(0)
-//
-//            case .Star1:
-//                return Int16(1)
-//
-//            case .Star2:
-//                return Int16(2)
-//
-//            case .Star3:
-//                return Int16(3)
-//
-//            case .Star4:
-//                return Int16(4)
-//
-//            case .Star5:
-//                return Int16(5)
-//        }
-//    }
-//
-//}

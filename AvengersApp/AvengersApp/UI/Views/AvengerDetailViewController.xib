@@ -9,10 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvengerDetailViewController" customModule="AvengersApp" customModuleProvider="target">
             <connections>
-                <outlet property="biographyAvenger" destination="k5t-lp-Bhn" id="3GU-dF-1h0"/>
-                <outlet property="imageAvenger" destination="I7H-xx-1Og" id="07Q-PO-Vh2"/>
-                <outlet property="powerAvenger" destination="bcq-IU-29b" id="46b-hD-YUk"/>
-                <outlet property="tableview" destination="x7D-VJ-QdZ" id="C4I-dB-Uoc"/>
+                <outlet property="biographyAvenger" destination="k5t-lp-Bhn" id="xAP-Ys-kGa"/>
+                <outlet property="imageAvenger" destination="I7H-xx-1Og" id="C4s-2t-YwC"/>
+                <outlet property="powerAvenger" destination="bcq-IU-29b" id="x8i-Kt-cGw"/>
+                <outlet property="tableView" destination="x7D-VJ-QdZ" id="pAe-KJ-wqt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,7 +52,7 @@
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                     </state>
                                     <connections>
-                                        <action selector="pencilPowerTapped:" destination="-1" eventType="touchUpInside" id="pEX-Zj-xYA"/>
+                                        <action selector="pencilPowerTapped:" destination="-1" eventType="touchUpInside" id="NUs-1w-fFf"/>
                                     </connections>
                                 </button>
                             </subviews>

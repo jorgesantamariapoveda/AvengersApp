@@ -45,12 +45,16 @@ class Database {
     func saveAll() -> Bool {
         guard let context = managedObjectContext else { return false}
 
-        do {
-            try context.save()
+        if context.hasChanges {
+            do {
+                try context.save()
+                return true
+            } catch let error as NSError {
+                print(error.localizedDescription)
+                return false
+            }
+        } else {
             return true
-        } catch let error as NSError {
-            print(error.localizedDescription)
-            return false
         }
     }
 
@@ -59,6 +63,7 @@ class Database {
 // MARK: - Hero
 extension Database {
 
+    // MARK: - Public functions
     func createHero() -> NSManagedObject? {
         guard let context = managedObjectContext,
             let entity = NSEntityDescription.entity(
@@ -85,6 +90,7 @@ extension Database {
 // MARK: Villain
 extension Database {
 
+    // MARK: - Public functions
     func createVillain() -> NSManagedObject? {
         guard let context = managedObjectContext,
             let entity = NSEntityDescription.entity(

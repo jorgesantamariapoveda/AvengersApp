@@ -83,6 +83,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CF24D568245C736300BF5674 /* Dataset */ = {
+			isa = PBXGroup;
+			children = (
+				CF24D562245C3C7000BF5674 /* HeroesData.swift */,
+				CF24D566245C5E5F00BF5674 /* VillainsData.swift */,
+			);
+			path = Dataset;
+			sourceTree = "<group>";
+		};
 		CF47D09624558B15003414E5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,10 +149,9 @@
 		CFE0EF26244C6D26008A59FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CF24D568245C736300BF5674 /* Dataset */,
 				CF24D560245C37D400BF5674 /* DatabaseProvider.swift */,
 				CFD74B4A2459E4B100CA1514 /* Database.swift */,
-				CF24D562245C3C7000BF5674 /* HeroesData.swift */,
-				CF24D566245C5E5F00BF5674 /* VillainsData.swift */,
 				CF24D55F245C300F00BF5674 /* Model */,
 				CFF12E012454AF260042963C /* Enums */,
 			);

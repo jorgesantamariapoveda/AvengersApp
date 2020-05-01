@@ -135,11 +135,11 @@ extension AvengersViewController: UITableViewDataSource {
         switch avengerType {
             case .Hero:
                 let hero = heroes[indexPath.row]
-                cell.configure(avengerType: avengerType, hero: hero, villain: nil)
+                cell.configure(hero: hero)
 
             case .Villain:
                 let villain = villains[indexPath.row]
-                cell.configure(avengerType: avengerType, hero: nil, villain: villain)
+                cell.configure(villain: villain)
         }
         return cell
     }
@@ -155,6 +155,15 @@ extension AvengersViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailAvengerVC = AvengerDetailViewController()
+        switch avengerType {
+            case .Hero:
+                let hero = heroes[indexPath.row]
+                detailAvengerVC.configure(hero: hero)
+
+            case .Villain:
+                let villain = villains[indexPath.row]
+                detailAvengerVC.configure(villain: villain)
+        }
         self.navigationController?.pushViewController(detailAvengerVC, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)

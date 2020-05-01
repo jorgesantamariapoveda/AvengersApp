@@ -12,21 +12,23 @@ struct HeroesData {
 
     private let database = DatabaseProvider()
 
+    private let defaultBiography = " Mamaar se calle ustée quietooor diodeno a wan hasta luego Lucas ese pedazo de ahorarr llevame al sircoo jarl pupita. Tiene musho peligro te va a hasé pupitaa llevame al sircoo ese que llega condemor papaar papaar condemor no puedor condemor va usté muy cargadoo. A wan ese que llega de la pradera te voy a borrar el cerito. Diodeno está la cosa muy malar tiene musho peligro a gramenawer amatomaa te va a hasé pupitaa ese que llega a wan va usté muy cargadoo. La caidita te voy a borrar el cerito fistro la caidita. Te va a hasé pupitaa está la cosa muy malar me cago en tus muelas a wan qué dise usteer qué dise usteer. Qué dise usteer a gramenawer por la gloria de mi madre a wan. Llevame al sircoo mamaar mamaar diodenoo apetecan ese pedazo de. No puedor ese que llega condemor no puedor."
+
     func createHeroesByDefault() -> [Hero] {
         var heroes: [Hero] = []
 
         if let blackPanther = database.createHero() {
             blackPanther.name = "BlackPanther"
             blackPanther.power = AvengerPower.Star2.valueInt16
-            blackPanther.biography = "Biography BlackPanther"
+            blackPanther.biography = "Biography BlackPanther" + defaultBiography
             blackPanther.image = "Baner_BlackPanther"
             heroes.append(blackPanther)
         }
 
         if let capitanaMarvel = database.createHero() {
             capitanaMarvel.name = "Capitana Marvel"
-            capitanaMarvel.power = AvengerPower.Star3.valueInt16
-            capitanaMarvel.biography = "Biography Capitana Marvel"
+            capitanaMarvel.power = AvengerPower.Star4.valueInt16
+            capitanaMarvel.biography = "Biography Capitana Marvel" + defaultBiography
             capitanaMarvel.image = "Baner_CapitanaMarvel"
             heroes.append(capitanaMarvel)
         }
@@ -34,7 +36,7 @@ struct HeroesData {
         if let capitanAmerica = database.createHero() {
             capitanAmerica.name = "CapitanAmerica"
             capitanAmerica.power = AvengerPower.Star1.valueInt16
-            capitanAmerica.biography = "Biography CapitanAmerica"
+            capitanAmerica.biography = "Biography CapitanAmerica" + defaultBiography
             capitanAmerica.image = "Baner_CapitanAmerica"
             heroes.append(capitanAmerica)
         }
@@ -42,7 +44,7 @@ struct HeroesData {
         if let drStrange = database.createHero() {
             drStrange.name = "DrStrange"
             drStrange.power = AvengerPower.Star4.valueInt16
-            drStrange.biography = "Biography DrStrange"
+            drStrange.biography = "Biography DrStrange" + defaultBiography
             drStrange.image = "Baner_DrStrange"
             heroes.append(drStrange)
         }
@@ -50,7 +52,7 @@ struct HeroesData {
         if let gamora = database.createHero() {
             gamora.name = "Gamora"
             gamora.power = AvengerPower.Star5.valueInt16
-            gamora.biography = "Biography Gamora"
+            gamora.biography = "Biography Gamora" + defaultBiography
             gamora.image = "Baner_Gamora"
             heroes.append(gamora)
         }
@@ -58,7 +60,7 @@ struct HeroesData {
         if let hulk = database.createHero() {
             hulk.name = "Hulk"
             hulk.power = AvengerPower.Star2.valueInt16
-            hulk.biography = "Biography Hulk"
+            hulk.biography = "Biography Hulk" + defaultBiography
             hulk.image = "Baner_Hulk"
             heroes.append(hulk)
         }
@@ -66,7 +68,7 @@ struct HeroesData {
         if let ironman = database.createHero() {
             ironman.name = "Ironman"
             ironman.power = AvengerPower.Star3.valueInt16
-            ironman.biography = "Biography Ironman"
+            ironman.biography = "Biography Ironman" + defaultBiography
             ironman.image = "Baner_Ironman"
             heroes.append(ironman)
         }
@@ -74,7 +76,7 @@ struct HeroesData {
         if let laViudaNegra = database.createHero() {
             laViudaNegra.name = "LaViudaNegra"
             laViudaNegra.power = AvengerPower.Star1.valueInt16
-            laViudaNegra.biography = "Biography LaViudaNegra"
+            laViudaNegra.biography = "Biography LaViudaNegra" + defaultBiography
             laViudaNegra.image = "Baner_LaViudaNegra"
             heroes.append(laViudaNegra)
         }
@@ -82,7 +84,7 @@ struct HeroesData {
         if let spiderman = database.createHero() {
             spiderman.name = "Spiderman"
             spiderman.power = AvengerPower.Star4.valueInt16
-            spiderman.biography = "Biography Spiderman"
+            spiderman.biography = "Biography Spiderman" + defaultBiography
             spiderman.image = "Baner_Spiderman"
             heroes.append(spiderman)
         }
@@ -90,7 +92,7 @@ struct HeroesData {
         if let thor = database.createHero() {
             thor.name = "Thor"
             thor.power = AvengerPower.Star3.valueInt16
-            thor.biography = "Biography Thor"
+            thor.biography = "Biography Thor" + defaultBiography
             thor.image = "Baner_Thor"
             heroes.append(thor)
         }

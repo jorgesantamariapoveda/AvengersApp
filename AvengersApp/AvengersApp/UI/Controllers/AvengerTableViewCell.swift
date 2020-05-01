@@ -17,7 +17,6 @@ final class AvengerTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     static let cellId: String = String(describing: AvengerTableViewCell.self)
-    private var avengerType: AvengerType = .Hero
     private var hero: Hero?
     private var villain: Villain?
 
@@ -29,7 +28,6 @@ final class AvengerTableViewCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
-        avengerType = .Hero
         hero = nil
         villain = nil
 
@@ -37,8 +35,7 @@ final class AvengerTableViewCell: UITableViewCell {
     }
 
     // MARK: - Public functions
-    func configure(avengerType: AvengerType, hero: Hero?, villain: Villain?) {
-        self.avengerType = avengerType
+    func configure(hero: Hero? = nil, villain: Villain? = nil) {
         self.hero = hero
         self.villain = villain
 
@@ -51,26 +48,20 @@ final class AvengerTableViewCell: UITableViewCell {
     }
 
     private func loadAvengerData() {
-        switch avengerType {
-            case .Hero:
-                nameAvenger.text = hero?.name
-                if let hero = hero,
-                    let image = UIImage(named: hero.image ?? "") {
-                    imageAvenger.image = image
-                }
-                guard let power = hero?.power,
-                        let imageButton = imageButtonBy(power: power) else { return }
-                powerAvengerButton.setImage(imageButton, for: .normal)
-
-            case .Villain:
-                nameAvenger.text = villain?.name
-                if let villain = villain,
-                    let image = UIImage(named: villain.image ?? "") {
-                    imageAvenger.image = image
-                }
-                guard let power = villain?.power,
-                        let imageButton = imageButtonBy(power: power) else { return }
-                powerAvengerButton.setImage(imageButton, for: .normal)
+        if let hero = self.hero {
+            nameAvenger.text = hero.name
+            if let image = UIImage(named: hero.image ?? "") {
+                imageAvenger.image = image
+            }
+            let imageButton = imageButtonBy(power: hero.power)
+            powerAvengerButton.setImage(imageButton, for: .normal)
+        } else if let villain = self.villain {
+            nameAvenger.text = villain.name
+            if let image = UIImage(named: villain.image ?? "") {
+                imageAvenger.image = image
+            }
+            let imageButton = imageButtonBy(power: villain.power)
+            powerAvengerButton.setImage(imageButton, for: .normal)
         }
     }
 
@@ -79,7 +70,6 @@ final class AvengerTableViewCell: UITableViewCell {
         guard let avengerPower = AvengerPower.init(rawValue: powerInt) else {
             return nil
         }
-
         return UIImage(named: avengerPower.valueString)
     }
 
