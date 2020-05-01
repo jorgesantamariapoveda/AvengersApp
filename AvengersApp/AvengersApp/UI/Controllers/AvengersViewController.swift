@@ -79,7 +79,7 @@ final class AvengersViewController: UIViewController {
             heroes.append(contentsOf: newHeroes)
             if databaseProvider.persistAll() == false {
                 heroes = []
-                print("🤬 persistAll")
+                print("🤬 persistAll heroes")
             }
         }
     }
@@ -94,7 +94,7 @@ final class AvengersViewController: UIViewController {
             villains.append(contentsOf: newVillains)
             if databaseProvider.persistAll() == false {
                 villains = []
-                print("🤬 persistAll")
+                print("🤬 persistAll villains")
             }
         }
     }
@@ -158,15 +158,24 @@ extension AvengersViewController: UITableViewDelegate {
         switch avengerType {
             case .Hero:
                 let hero = heroes[indexPath.row]
-                detailAvengerVC.configure(hero: hero)
+                detailAvengerVC.configure(hero: hero, delegate: self)
 
             case .Villain:
                 let villain = villains[indexPath.row]
-                detailAvengerVC.configure(villain: villain)
+                detailAvengerVC.configure(villain: villain, delegate: self)
         }
         self.navigationController?.pushViewController(detailAvengerVC, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+}
+
+// MARK: - AvengerDetailViewControllerDelegate
+extension AvengersViewController: AvengerDetailViewControllerDelegate {
+
+    func onChangePower() {
+        showData()
     }
 
 }

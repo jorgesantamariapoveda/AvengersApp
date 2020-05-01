@@ -17,8 +17,10 @@ final class AvengerTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     static let cellId: String = String(describing: AvengerTableViewCell.self)
+    
     private var hero: Hero?
     private var villain: Villain?
+    private weak var delegate: AvengerPowerViewControllerDelegate?
 
     // MARK: - Life cycle functions
     override func awakeFromNib() {
@@ -53,24 +55,16 @@ final class AvengerTableViewCell: UITableViewCell {
             if let image = UIImage(named: hero.image ?? "") {
                 imageAvenger.image = image
             }
-            let imageButton = imageButtonBy(power: hero.power)
+            let imageButton = hero.power.imagePower()
             powerAvengerButton.setImage(imageButton, for: .normal)
         } else if let villain = self.villain {
             nameAvenger.text = villain.name
             if let image = UIImage(named: villain.image ?? "") {
                 imageAvenger.image = image
             }
-            let imageButton = imageButtonBy(power: villain.power)
+            let imageButton = villain.power.imagePower()
             powerAvengerButton.setImage(imageButton, for: .normal)
         }
-    }
-
-    private func imageButtonBy(power: Int16) -> UIImage? {
-        let powerInt = Int(power)
-        guard let avengerPower = AvengerPower.init(rawValue: powerInt) else {
-            return nil
-        }
-        return UIImage(named: avengerPower.valueString)
     }
 
 }

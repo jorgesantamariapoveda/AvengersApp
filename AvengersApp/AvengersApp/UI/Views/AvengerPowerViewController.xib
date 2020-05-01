@@ -9,8 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvengerPowerViewController" customModule="AvengersApp" customModuleProvider="target">
             <connections>
-                <outlet property="avengerImage" destination="Kh2-Qh-UO8" id="gGs-5Y-h5u"/>
                 <outlet property="cancelButton" destination="fzH-a7-lcZ" id="nTf-HH-eEm"/>
+                <outlet property="imageAvenger" destination="Kh2-Qh-UO8" id="ogA-fN-SDd"/>
                 <outlet property="powerAvengerButton" destination="fvj-LT-aVa" id="QVT-yj-dUx"/>
                 <outlet property="saveButton" destination="hY6-Pr-7ng" id="GAZ-In-thK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,6 +43,9 @@
                                     <rect key="frame" x="3" y="29" width="97" height="22"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <state key="normal" image="5 estrellas"/>
+                                    <connections>
+                                        <action selector="powerAvengerButtonTapped:" destination="-1" eventType="touchUpInside" id="Ysk-rv-irD"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

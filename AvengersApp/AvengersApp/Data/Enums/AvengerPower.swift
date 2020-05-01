@@ -6,7 +6,7 @@
 //  Copyright © 2020 Jorge. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum AvengerPower: Int {
     case Star0 = 0
@@ -40,6 +40,32 @@ enum AvengerPower: Int {
             case .Star5:
                 return "5 estrellas"
         }
+    }
+
+    mutating func changeState() {
+        switch self {
+            case .Star0:
+                self = .Star1
+
+            case .Star1:
+                self = .Star2
+
+            case .Star2:
+                self = .Star3
+
+            case .Star3:
+                self = .Star4
+
+            case .Star4:
+                self = .Star5
+
+            case .Star5:
+                self = .Star0
+        }
+    }
+
+    var imagePower: UIImage? {
+        return UIImage(named: self.valueString)
     }
 
 }
