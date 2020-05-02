@@ -23,13 +23,13 @@ final class BattlesViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        loadBattles()
-        showData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
+        loadBattles()
+        showData()
         setLastVisitScreenIndex()
     }
 
@@ -47,10 +47,8 @@ final class BattlesViewController: UIViewController {
     private func configureTableView() {
         let nib = UINib(nibName: "BattleTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: BattleTableViewCell.cellId)
-
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.separatorStyle = .none
     }
 

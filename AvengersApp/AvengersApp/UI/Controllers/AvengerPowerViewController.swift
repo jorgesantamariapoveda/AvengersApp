@@ -41,7 +41,6 @@ final class AvengerPowerViewController: UIViewController {
         self.hero = hero
         self.villain = villain
         self.delegate = delegate
-
         currentAvengerPower = getAvengerPower()
     }
 

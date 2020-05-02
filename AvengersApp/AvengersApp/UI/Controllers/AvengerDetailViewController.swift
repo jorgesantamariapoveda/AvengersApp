@@ -47,16 +47,13 @@ final class AvengerDetailViewController: UIViewController {
     // MARK: - Private functions
     private func setupUI() {
         imageAvenger.layer.cornerRadius = 8
-
         configureTableView()
     }
 
     private func configureTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-
         tableView.dataSource = self
         tableView.delegate = self
-
         tableView.separatorStyle = .none
     }
 
@@ -76,6 +73,10 @@ final class AvengerDetailViewController: UIViewController {
             powerAvenger.image = villain.power.imagePower()
             biographyAvenger.text = villain.biography
         }
+    }
+
+    private func showData() {
+        tableView.reloadData()
     }
 
     // MARK: - IBActions
@@ -107,19 +108,27 @@ extension AvengerDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
-        if let hero = self.hero {
-            guard let battle = hero.battles?[indexPath.row] as? Battle,
-                let winnerType = WinnerType.init(rawValue: Int(battle.winner)) else { return cell }
+        if let battle = getBattleBy(pos: indexPath.row),
+            let winnerType = WinnerType.init(rawValue: Int(battle.winner)) {
             cell.textLabel?.text = textBattle(battle: battle, txtAvenger: winnerType.textHero)
             cell.backgroundColor = winnerType.colorHero
-        } else if let villain = self.villain {
-            guard let battle = villain.battles?[indexPath.row] as? Battle,
-                let winnerType = WinnerType.init(rawValue: Int(battle.winner)) else { return cell }
-            cell.textLabel?.text = textBattle(battle: battle, txtAvenger: winnerType.textVillain)
-            cell.backgroundColor = winnerType.colorVillain
         }
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+            case .delete:
+                if deleteBattleBy(pos: indexPath.row) == true {
+                    showData()
+                }
+
+            default:
+                break
+        }
     }
 
     private func textBattle(battle: Battle, txtAvenger: String) -> String {
@@ -129,6 +138,31 @@ extension AvengerDetailViewController: UITableViewDataSource {
         }
         textBattle.append("(\(txtAvenger))")
         return textBattle
+    }
+
+    private func getBattles() -> NSOrderedSet? {
+        if let hero = self.hero {
+            return hero.battles
+        } else if let villain = self.villain {
+            return villain.battles
+        }
+        return nil
+    }
+
+    private func getBattleBy(pos: Int) -> Battle? {
+        if let battles = getBattles() {
+            if pos < battles.count {
+                return battles[pos] as? Battle
+            }
+        }
+        return nil
+    }
+
+    private func deleteBattleBy(pos: Int) -> Bool {
+        if let battle = getBattleBy(pos: pos) {
+            return databaseProvider.deleteBatte(battle: battle)
+        }
+        return false
     }
 
 }

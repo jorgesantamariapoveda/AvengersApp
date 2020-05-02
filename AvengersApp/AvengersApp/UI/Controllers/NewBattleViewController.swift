@@ -106,7 +106,7 @@ final class NewBattleViewController: UIViewController {
     }
 
     private func setupTitleBattle() {
-        self.titleBattle.text = "Battle \(battleNumber())"
+        titleBattle.text = "Battle \(battleNumber())"
     }
 
     private func battleNumber() -> Int {

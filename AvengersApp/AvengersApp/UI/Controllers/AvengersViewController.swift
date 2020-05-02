@@ -57,10 +57,8 @@ final class AvengersViewController: UIViewController {
     private func configureTableView() {
         let nib = UINib(nibName: "AvengerTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: AvengerTableViewCell.cellId)
-
         tableView.delegate = self
         tableView.dataSource = self
-
         tableView.separatorStyle = .none
     }
 
