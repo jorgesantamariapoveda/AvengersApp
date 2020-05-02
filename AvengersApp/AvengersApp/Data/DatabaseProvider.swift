@@ -8,10 +8,14 @@
 
 import Foundation
 
-class DatabaseProvider {
+final class DatabaseProvider {
 
+    // MARK: - Properties
     private var database: Database?
+    private var userDefault = UserDefaults.standard
+    private let keyUserDefaultLastVisitScreenIndex = "LastVisitScreenIndex"
 
+    // MARK: Life cycle functions
     init() {
         database = Database()
     }
@@ -45,6 +49,7 @@ extension DatabaseProvider {
 
         return data
     }
+    
 }
 
 // MARK: - Villain database
@@ -82,6 +87,23 @@ extension DatabaseProvider {
     func deleteBatte(battle: Battle) -> Bool {
         guard let title = battle.title else { return false }
         return database?.deleteBattleBy(title: title) ?? false
+    }
+
+}
+
+// MARK: - UserDefaults
+extension DatabaseProvider {
+
+    func setLastVisitScreenIndex(index: Int) {
+        userDefault.set(index, forKey: keyUserDefaultLastVisitScreenIndex)
+    }
+
+    func getLastVisitScreenIndex() -> Int {
+        // En este caso concreto sino existe la clave me devolverá 0 y por
+        // lo tanto me sirve. Sino fuese así, habría que comprobar que no
+        // existe la clave (dictionaryRepresentation().keys.contains(keyBuscada))
+        // y adoptar otra decisión
+        return userDefault.integer(forKey: keyUserDefaultLastVisitScreenIndex)
     }
 
 }

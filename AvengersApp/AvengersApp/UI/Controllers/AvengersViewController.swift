@@ -28,6 +28,12 @@ final class AvengersViewController: UIViewController {
         showData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        setLastVisitScreenIndex()
+    }
+
     // MARK: - Public functions
     func setAvengerType(type: AvengerType) {
         avengerType = type
@@ -102,6 +108,12 @@ final class AvengersViewController: UIViewController {
         tableView.reloadData()
     }
 
+    private func setLastVisitScreenIndex() {
+        if let index = self.tabBarController?.selectedIndex {
+            databaseProvider.setLastVisitScreenIndex(index: index)
+        }
+    }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -118,7 +130,8 @@ extension AvengersViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AvengerTableViewCell.cellId, for: indexPath) as? AvengerTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AvengerTableViewCell.cellId,
+                                                       for: indexPath) as? AvengerTableViewCell else {
             return UITableViewCell()
         }
         switch avengerType {
@@ -163,7 +176,7 @@ extension AvengersViewController: UITableViewDelegate {
 // MARK: - AvengerDetailViewControllerDelegate
 extension AvengersViewController: AvengerDetailViewControllerDelegate {
 
-    func onChangePower() {
+    func onPowerPersist() {
         showData()
     }
 

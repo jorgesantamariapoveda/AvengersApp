@@ -135,10 +135,10 @@
 		CFE0EF0C244C610B008A59FC /* AvengersApp */ = {
 			isa = PBXGroup;
 			children = (
-				CF24D569245C7B4C00BF5674 /* Extension */,
 				CFE0EF25244C6D0D008A59FC /* App */,
 				CFE0EF27244C6D53008A59FC /* UI */,
 				CFE0EF26244C6D26008A59FC /* Data */,
+				CF24D569245C7B4C00BF5674 /* Extension */,
 				CFE0EF24244C6C9C008A59FC /* Resources */,
 			);
 			path = AvengersApp;

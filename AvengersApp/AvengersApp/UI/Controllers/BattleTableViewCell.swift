@@ -19,7 +19,6 @@ final class BattleTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     static let cellId: String = String(describing: BattleTableViewCell.self)
-
     private var battle: Battle?
 
     // MARK: - Life cycle functions

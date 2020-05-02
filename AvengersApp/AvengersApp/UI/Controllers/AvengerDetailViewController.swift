@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AvengerDetailViewControllerDelegate: AnyObject {
-    func onChangePower()
+    func onPowerPersist()
 }
 
 final class AvengerDetailViewController: UIViewController {
@@ -36,7 +36,9 @@ final class AvengerDetailViewController: UIViewController {
     }
 
     // MARK: - Public functions
-    func configure(hero: Hero? = nil, villain: Villain? = nil, delegate: AvengerDetailViewControllerDelegate) {
+    func configure(hero: Hero? = nil,
+                   villain: Villain? = nil,
+                   delegate: AvengerDetailViewControllerDelegate) {
         self.hero = hero
         self.villain = villain
         self.delegate = delegate
@@ -106,18 +108,27 @@ extension AvengerDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
         if let hero = self.hero {
-            guard let battle = hero.battles?[indexPath.row] as? Battle else { return cell }
-            cell.textLabel?.text = battle.title
-            let winnerType = WinnerType.init(rawValue: Int(battle.winner))
-            cell.backgroundColor = winnerType?.colorHero
+            guard let battle = hero.battles?[indexPath.row] as? Battle,
+                let winnerType = WinnerType.init(rawValue: Int(battle.winner)) else { return cell }
+            cell.textLabel?.text = textBattle(battle: battle, txtAvenger: winnerType.textHero)
+            cell.backgroundColor = winnerType.colorHero
         } else if let villain = self.villain {
-            guard let battle = villain.battles?[indexPath.row] as? Battle else { return cell }
-            cell.textLabel?.text = battle.title
-            let winnerType = WinnerType.init(rawValue: Int(battle.winner))
-            cell.backgroundColor = winnerType?.colorVillain
+            guard let battle = villain.battles?[indexPath.row] as? Battle,
+                let winnerType = WinnerType.init(rawValue: Int(battle.winner)) else { return cell }
+            cell.textLabel?.text = textBattle(battle: battle, txtAvenger: winnerType.textVillain)
+            cell.backgroundColor = winnerType.colorVillain
         }
 
         return cell
+    }
+
+    private func textBattle(battle: Battle, txtAvenger: String) -> String {
+        var textBattle = ""
+        if let titleBattle = battle.title {
+            textBattle.append(titleBattle + " ")
+        }
+        textBattle.append("(\(txtAvenger))")
+        return textBattle
     }
 
 }
@@ -144,7 +155,7 @@ extension AvengerDetailViewController: AvengerPowerViewControllerDelegate {
         }
 
         if databaseProvider.persistAll() == true {
-            delegate?.onChangePower()
+            delegate?.onPowerPersist()
         } else {
             print("🤬 persistAll power")
         }

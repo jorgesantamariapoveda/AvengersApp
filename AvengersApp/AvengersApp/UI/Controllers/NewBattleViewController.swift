@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NewBattleViewControllerDelegate: AnyObject {
-    func onNewBattle()
+    func onCreateNewBattle()
 }
 
 final class NewBattleViewController: UIViewController {
@@ -23,6 +23,7 @@ final class NewBattleViewController: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
 
+    // MARK: - Properties
     private let databaseProvider = DatabaseProvider()
     private var battles: [Battle] = []
     private var heroes: [Hero] = []
@@ -131,15 +132,19 @@ final class NewBattleViewController: UIViewController {
         }
     }
 
-    func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
 
+    private func dismissViewController() {
+        dismiss(animated: true, completion: nil)
+    }
+
     // MARK: - IBActions
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismissViewController()
     }
 
     @IBAction func heroButtonTapped(_ sender: UIButton) {
@@ -160,8 +165,8 @@ final class NewBattleViewController: UIViewController {
         if let hero = self.hero,
             let villain = self.villain {
             if createNewBattle(hero: hero, villain: villain) == true {
-                delegate?.onNewBattle()
-                self.dismiss(animated: true, completion: nil)
+                delegate?.onCreateNewBattle()
+                dismissViewController()
             } else {
                 print("😡 Error new battle")
             }

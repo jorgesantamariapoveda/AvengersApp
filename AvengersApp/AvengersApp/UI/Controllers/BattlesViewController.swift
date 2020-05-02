@@ -27,6 +27,12 @@ final class BattlesViewController: UIViewController {
         showData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        setLastVisitScreenIndex()
+    }
+
     // MARK: - Private functions
     private func setupUI() {
         self.title = "Battles"
@@ -60,6 +66,12 @@ final class BattlesViewController: UIViewController {
         tableView.reloadData()
     }
 
+    private func setLastVisitScreenIndex() {
+        if let index = self.tabBarController?.selectedIndex {
+            databaseProvider.setLastVisitScreenIndex(index: index)
+        }
+    }
+
     // MARK: - IBActions
     @IBAction func addBattleButtonTapped(_ sender: UIButton) {
         let newBattleVC = NewBattleViewController()
@@ -82,7 +94,9 @@ extension BattlesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BattleTableViewCell.cellId, for: indexPath) as? BattleTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(
+                                    withIdentifier: BattleTableViewCell.cellId,
+                                    for: indexPath) as? BattleTableViewCell else {
             return UITableViewCell()
         }
         let battle = battles[indexPath.row]
@@ -90,7 +104,9 @@ extension BattlesViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
         switch editingStyle {
             case .delete:
                 if indexPath.row < battles.count {
@@ -124,7 +140,7 @@ extension BattlesViewController: UITableViewDelegate {
 // MARK: - NewBattleViewControllerDelegate
 extension BattlesViewController: NewBattleViewControllerDelegate {
 
-    func onNewBattle() {
+    func onCreateNewBattle() {
         if databaseProvider.persistAll() == true {
             loadBattles()
             showData()

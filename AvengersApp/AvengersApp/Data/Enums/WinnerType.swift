@@ -19,18 +19,36 @@ enum WinnerType: Int {
     var colorHero: UIColor {
         switch self {
         case .Hero:
-            return .blue
+            return .systemBlue
         case .Villain:
-            return .red
+            return .systemPink
         }
     }
 
     var colorVillain: UIColor {
         switch self {
         case .Hero:
-            return .red
+            return .systemPink
         case .Villain:
-            return .blue
+            return .systemBlue
+        }
+    }
+
+    var textHero: String {
+        switch self {
+        case .Hero:
+            return "Win"
+        case .Villain:
+            return "Lost"
+        }
+    }
+
+    var textVillain: String {
+        switch self {
+        case .Hero:
+            return "Lost"
+        case .Villain:
+            return "Win"
         }
     }
 

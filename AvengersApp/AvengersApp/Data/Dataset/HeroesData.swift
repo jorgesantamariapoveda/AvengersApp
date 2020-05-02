@@ -10,10 +10,11 @@ import Foundation
 
 struct HeroesData {
 
+    // MARK: - Properties
     private let databaseProvider = DatabaseProvider()
-
     private let defaultBiography = " Mamaar se calle ustée quietooor diodeno a wan hasta luego Lucas ese pedazo de ahorarr llevame al sircoo jarl pupita. Tiene musho peligro te va a hasé pupitaa llevame al sircoo ese que llega condemor papaar papaar condemor no puedor condemor va usté muy cargadoo. A wan ese que llega de la pradera te voy a borrar el cerito. Diodeno está la cosa muy malar tiene musho peligro a gramenawer amatomaa te va a hasé pupitaa ese que llega a wan va usté muy cargadoo. La caidita te voy a borrar el cerito fistro la caidita. Te va a hasé pupitaa está la cosa muy malar me cago en tus muelas a wan qué dise usteer qué dise usteer. Qué dise usteer a gramenawer por la gloria de mi madre a wan. Llevame al sircoo mamaar mamaar diodenoo apetecan ese pedazo de. No puedor ese que llega condemor no puedor."
 
+    // MARK: - Public functions
     func createHeroesByDefault() -> [Hero] {
         var heroes: [Hero] = []
 
@@ -99,4 +100,5 @@ struct HeroesData {
 
         return heroes
     }
+    
 }

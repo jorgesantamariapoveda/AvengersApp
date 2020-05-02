@@ -10,10 +10,11 @@ import Foundation
 
 struct VillainsData {
 
+    // MARK: - Properties
     private let databaseProvider = DatabaseProvider()
-
     private let defaultBiography = " Ese pedazo de caballo blanco caballo negroorl al ataquerl sexuarl benemeritaar de la pradera. Benemeritaar tiene musho peligro jarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor ahorarr benemeritaar. Me cago en tus muelas apetecan no puedor caballo blanco caballo negroorl ese que llega. Ese pedazo de papaar papaar me cago en tus muelas a gramenawer fistro de la pradera mamaar al ataquerl está la cosa muy malar a gramenawer. Jarl está la cosa muy malar se calle ustée benemeritaar qué dise usteer ese pedazo de va usté muy cargadoo. Condemor sexuarl fistro tiene musho peligro a gramenawer te voy a borrar el cerito qué dise usteer ahorarr te va a hasé pupitaa diodenoo. Jarl por la gloria de mi madre pecador te va a hasé pupitaa no te digo trigo por no llamarte Rodrigor llevame al sircoo fistro. A gramenawer se calle ustée por la gloria de mi madre a peich va usté muy cargadoo pecador."
 
+    // MARK: - Public functions
     func createVillainsByDefault() -> [Villain] {
         var villains: [Villain] = []
 
@@ -99,4 +100,5 @@ struct VillainsData {
 
         return villains
     }
+    
 }

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class Database {
+final class Database {
 
     // MARK: - Properties
     private let entityHero = "Hero"

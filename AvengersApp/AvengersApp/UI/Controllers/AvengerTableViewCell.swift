@@ -17,7 +17,6 @@ final class AvengerTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     static let cellId: String = String(describing: AvengerTableViewCell.self)
-    
     private var hero: Hero?
     private var villain: Villain?
     private weak var delegate: AvengerPowerViewControllerDelegate?

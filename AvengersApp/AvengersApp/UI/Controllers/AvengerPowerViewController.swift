@@ -23,7 +23,7 @@ final class AvengerPowerViewController: UIViewController {
     // MARK: - Properties
     private var hero: Hero?
     private var villain: Villain?
-    private var powerCurrent: Int?
+    private var currentAvengerPower: AvengerPower = .Star0
     private weak var delegate: AvengerPowerViewControllerDelegate?
     
     // MARK: - Life cycle functions
@@ -35,12 +35,14 @@ final class AvengerPowerViewController: UIViewController {
     }
 
     // MARK: - Public functions
-    func configure(hero: Hero? = nil, villain: Villain? = nil, delegate: AvengerPowerViewControllerDelegate) {
+    func configure(hero: Hero? = nil,
+                   villain: Villain? = nil,
+                   delegate: AvengerPowerViewControllerDelegate) {
         self.hero = hero
         self.villain = villain
         self.delegate = delegate
 
-        powerCurrent = getValueAvengerPower()
+        currentAvengerPower = getAvengerPower()
     }
 
     // MARK: - Private functions
@@ -76,40 +78,39 @@ final class AvengerPowerViewController: UIViewController {
         return UIImage(named: avengerPower.valueString)
     }
 
-    private func getValueAvengerPower() -> Int {
+    private func getAvengerPower() -> AvengerPower {
         var value: Int = 0
         if let hero = self.hero {
             value = Int(hero.power)
         } else if let villain = self.villain {
             value = Int(villain.power)
         }
-        return value
+        return AvengerPower(rawValue: value) ?? AvengerPower.Star0
     }
 
-    private func close() {
+    private func popViewController() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    private func updateImagePowerAvengerButton() {
+        if let image = currentAvengerPower.imagePower {
+            powerAvengerButton.setImage(image, for: .normal)
+        }
     }
 
     // MARK: - IBActions
     @IBAction func powerAvengerButtonTapped(_ sender: UIButton) {
-        if powerCurrent != nil {
-            var powerAvenger = AvengerPower(rawValue: powerCurrent!) ?? AvengerPower.Star0
-            powerAvenger.changeState()
-            powerCurrent = powerAvenger.rawValue
-
-            let newImage = powerAvenger.imagePower
-            powerAvengerButton.setImage(newImage, for: .normal)
-        }
+        currentAvengerPower.changeState()
+        updateImagePowerAvengerButton()
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        close()
+        popViewController()
     }
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        guard let power = powerCurrent else { return }
-        self.delegate?.onChangePower(newPower: power)
-        close()
+        delegate?.onChangePower(newPower: currentAvengerPower.rawValue)
+        popViewController()
     }
 
 }
