@@ -106,12 +106,18 @@ final class NewBattleViewController: UIViewController {
     }
 
     private func setupTitleBattle() {
-        let numBattles = battles.count + 1
-        self.titleBattle.text = "Battle \(numBattles)"
+        self.titleBattle.text = "Battle \(battleNumber())"
+    }
+
+    private func battleNumber() -> Int {
+        var maxBattleNum = 0
+        battles.forEach { maxBattleNum = max(maxBattleNum, Int($0.id)) }
+        return maxBattleNum + 1
     }
 
     private func createNewBattle(hero: Hero, villain: Villain) -> Bool {
         if let newBattle = databaseProvider.createBattle() {
+            newBattle.id = Int16(battleNumber())
             newBattle.title = self.titleBattle.text
             newBattle.hero = hero
             newBattle.villain = villain

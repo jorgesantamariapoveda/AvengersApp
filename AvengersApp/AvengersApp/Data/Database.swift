@@ -138,11 +138,11 @@ extension Database {
         return battles
     }
 
-    func deleteBattleBy(title: String) -> Bool {
+    func deleteBattleBy(id: Int16) -> Bool {
         guard let context = managedObjectContext else { return false }
 
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityBattle)
-        fetchRequest.predicate = NSPredicate(format: "title = %@", title)
+        fetchRequest.predicate = NSPredicate(format: "id = %i", id)
 
         do {
             let datas = try context.fetch(fetchRequest)

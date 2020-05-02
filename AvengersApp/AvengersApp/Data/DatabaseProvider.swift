@@ -85,8 +85,7 @@ extension DatabaseProvider {
     }
 
     func deleteBatte(battle: Battle) -> Bool {
-        guard let title = battle.title else { return false }
-        return database?.deleteBattleBy(title: title) ?? false
+        return database?.deleteBattleBy(id: battle.id) ?? false
     }
 
 }
