@@ -53,9 +53,9 @@ final class BattlesViewController: UIViewController {
     }
 
     private func loadBattles() {
+        battles = []
         let battlesBD = databaseProvider.loadBattles()
         if battlesBD.count > 0 {
-            battles = []
             battles.append(contentsOf: battlesBD)
         }
     }
