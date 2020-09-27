@@ -6,8 +6,7 @@ Aplicación básica iOS sobre _Los Vengadores_ en el que se efectúan combates d
 
 - Xcode
 - Swift
-
--- Persistencia: **CoreData** y **UserDefaults**
+  -- Persistencia: **CoreData** y **UserDefaults**
 
 ## Especificaciones
 
