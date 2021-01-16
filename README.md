@@ -1,13 +1,12 @@
-# 03 Persistencia, Instrumentación y Optimización
+## Objetivo
+Aplicar los conceptos de persistencia local mediante el framework **CoreData** y en determinados casos puntuales para datos no sensibles **UserDefaults**.
 
-Aplicación básica iOS sobre _Los Vengadores_ en el que se efectúan combates de forma aleatoria.
-
-## Tecnologías
+Se trata de una aplicación básica sobre _Los Vengadores_ en el que se efectúan combates de forma aleatoria.
 
 - Xcode
 - Swift
-
-  -- Persistencia: **CoreData** y **UserDefaults**
+- CoreData
+- UserDefaults
 
 ## Especificaciones
 
